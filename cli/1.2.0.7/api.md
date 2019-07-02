@@ -66,27 +66,37 @@ JSON-RPC 服务器启动后，会监听 TCP 端口，默认端口如下。
 
 ## 命令列表
 
-| 方法                                                         | 参数                  | 说明                                             | 备注         |
-| ------------------------------------------------------------ | --------------------- | ------------------------------------------------ | ------------ |
-| [getnewaddress](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getnewaddress.md) |                       | 创建一个新的地址                                 | 需要打开钱包 |
-| [listaddress](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/listaddress.md) |                       | 列出当前钱包内的所有地址                         | 需要打开钱包 |
-| [dumpprivkey](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/dumpprivkey.md) | < address >           | 导出指定地址的私钥                               | 需要打开钱包 |
-| [validateaddress](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/validateaddress.md) | < address >           | 验证地址是否是正确的BHP地址                      |              |
-| [getaccountstate](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getaccountstate.md) | < address >           | 根据账户地址，查询账户资产信息                   |              |
-| [getassetstate](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getassetstate.md) | < asset_id >          | 根据指定的资产编号，查询资产信息                 |              |
-| [getbalance](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getbalance.md) | < asset_id >          | 根据指定的资产编号，返回钱包中对应资产的余额信息 | 需要打开钱包 |
-| [getblockcount](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getblockcount.md) |                       | 获取主链中区块的数量                             |              |
-| [getbestblockhash](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getbestblockhash.md) |                       | 获取主链中高度最大的区块的散列                   |              |
-| [getblockhash](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getblockhash.md) | < index >             | 根据指定的索引，返回对应区块的散列值             |              |
-| [getblock](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getblock.md) | < hash > [verbose=0]  | 根据指定的散列值，返回对应的区块信息             |              |
-| [getblock](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getblock2.md) | < index > [verbose=0] | 根据指定的索引，返回对应的区块信息               |              |
-| [getpeers](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getpeers.md) |                       | 获得该节点当前已连接/未连接的节点列表            |              |
-| [getconnectioncount](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getconnectioncount.md) |                       | 获取节点当前的连接数                             |              |
-| [getversion](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getversion.md) |                       | 获取查询节点的版本信息                           |              |
-| [getvalidators](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getvalidators.md) |                       | 查看当前共识节点的信息                           |              |
-| [getcontractstate](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getcontractstate.md) | < script_hash >       | 根据合约脚本散列，查询合约信息                   |              |
-|                                                              |                       |                                                  |              |
-|                                                              |                       |                                                  |              |
+| 方法                                                         | 参数                                          | 说明                                                 | 备注             |
+| ------------------------------------------------------------ | --------------------------------------------- | ---------------------------------------------------- | ---------------- |
+| [getnewaddress](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getnewaddress.md) |                                               | 创建一个新的地址                                     | 需要打开钱包     |
+| [listaddress](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/listaddress.md) |                                               | 列出当前钱包内的所有地址                             | 需要打开钱包     |
+| [dumpprivkey](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/dumpprivkey.md) | < address >                                   | 导出指定地址的私钥                                   | 需要打开钱包     |
+| [validateaddress](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/validateaddress.md) | < address >                                   | 验证地址是否是正确的BHP地址                          |                  |
+| [getaccountstate](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getaccountstate.md) | < address >                                   | 根据账户地址，查询账户资产信息                       |                  |
+| [getassetstate](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getassetstate.md) | < asset_id >                                  | 根据指定的资产编号，查询资产信息                     |                  |
+| [getbalance](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getbalance.md) | < asset_id >                                  | 根据指定的资产编号，返回钱包中对应资产的余额信息     | 需要打开钱包     |
+| [getblockcount](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getblockcount.md) |                                               | 获取主链中区块的数量                                 |                  |
+| [getbestblockhash](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getbestblockhash.md) |                                               | 获取主链中高度最大的区块的散列                       |                  |
+| [getblockhash](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getblockhash.md) | < index >                                     | 根据指定的索引，返回对应区块的散列值                 |                  |
+| [getblock](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getblock.md) | < hash > [verbose=0]                          | 根据指定的散列值，返回对应的区块信息                 |                  |
+| [getblock](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getblock2.md) | < index > [verbose=0]                         | 根据指定的索引，返回对应的区块信息                   |                  |
+| [getpeers](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getpeers.md) |                                               | 获得该节点当前已连接/未连接的节点列表                |                  |
+| [getconnectioncount](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getconnectioncount.md) |                                               | 获取节点当前的连接数                                 |                  |
+| [getversion](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getversion.md) |                                               | 获取查询节点的版本信息                               |                  |
+| [getvalidators](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getvalidators.md) |                                               | 查看当前共识节点的信息                               |                  |
+| [getcontractstate](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getcontractstate.md) | < script_hash >                               | 根据合约脚本散列，查询合约信息                       |                  |
+| [invoke](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/invoke.md) | < script_hash > < params >                    | 使用给定的参数以散列值调用智能合约                   |                  |
+| [invokefunction](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/invokefunction.md) | < script_hash > < operation > < params >      | 以指定的脚本散列值调用智能合约，传入操作及参数       |                  |
+| [invokescript](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/invokescript.md) | < script >                                    | 通过虚拟机运行脚本并返回结果                         |                  |
+| [sendrawtransaction](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/sendrawtransaction.md) | < hex >                                       | 广播交易                                             |                  |
+| [getrawmempool](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getrawmempool.md) |                                               | 获取内存中未确认的交易列表                           |                  |
+| [getrawtransaction](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getrawtransaction.md) | < txid > [verbose=0]                          | 根据指定的散列值，返回对应的交易信息                 |                  |
+| [gettxout](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/gettxout.md) | < txid > < n >                                | 根据指定的散列和索引，返回对应的交易输出（零钱）信息 |                  |
+| [getstorage](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getstorage.md) | < script_hash > < key >                       | 根据合约脚本散列和存储的 key，返回存储的 value       |                  |
+| [getblocksysfee](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getblocksysfee.md) | < index >                                     | 根据指定的索引，返回截止到该区块前的系统手续费       |                  |
+| [sendfrom](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/sendfrom.md) | < asset_id > < from >< to > < value > [fee=0] | 从指定地址，向指定地址转账                           | 需要打开钱包     |
+| [sendmany](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/sendmany.md) | < outputs_array > [fee=0] [change_address]    | 批量转账命令                                         | 需要打开钱包     |
+| [submitblock](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/submitblock.md) | < hex >                                       | 提交新的区块                                         | 需要成为共识节点 |
 
 ## POST 请求示例
 
