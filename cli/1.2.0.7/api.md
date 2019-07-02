@@ -66,10 +66,17 @@ JSON-RPC 服务器启动后，会监听 TCP 端口，默认端口如下。
 
 ## 命令列表
 
-| 方法                                                         | 参数        | 说明               | 备注         |
-| ------------------------------------------------------------ | ----------- | ------------------ | ------------ |
-| [dumpprivkey](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/dumpprivkey.md) | < address > | 导出指定地址的私钥 | 需要打开钱包 |
-|                                                              |             |                    |              |
+| 方法                                                         | 参数         | 说明                                             | 备注         |
+| ------------------------------------------------------------ | ------------ | ------------------------------------------------ | ------------ |
+| [getnewaddress](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getnewaddress.md) |              | 创建一个新的地址                                 | 需要打开钱包 |
+| [listaddress](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/listaddress.md) |              | 列出当前钱包内的所有地址                         | 需要打开钱包 |
+| [dumpprivkey](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/dumpprivkey.md) | < address >  | 导出指定地址的私钥                               | 需要打开钱包 |
+| [validateaddress](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/validateaddress.md) | < address >  | 验证地址是否是正确的BHP地址                      |              |
+| [getaccountstate](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getaccountstate.md) | < address >  | 根据账户地址，查询账户资产信息                   |              |
+| [getassetstate](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getassetstate.md) | < asset_id > | 根据指定的资产编号，查询资产信息                 |              |
+| [getbalance](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getbalance.md) | < asset_id > | 根据指定的资产编号，返回钱包中对应资产的余额信息 | 需要打开钱包 |
+| [getblockcount](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getblockcount.md) |              | 获取主链中区块的数量                             |              |
+| [getbestblockhash](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getbestblockhash.md) |              | 获取主链中高度最大的区块的散列                   |              |
 
 ## POST 请求示例
 
