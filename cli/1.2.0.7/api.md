@@ -112,6 +112,9 @@ JSON-RPC 服务器启动后，会监听 TCP 端口，默认端口如下。
 | [listsinceblock](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/listsinceblock.md) | < start_height >[target_confirmations]              | 根据参数返回与钱包相关的所有交易                     | 需要打开钱包     |
 | [sendtoaddressorder](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/sendtoaddressorder.md) | < order >< asset_id > < address > < value > [fee=0] | 发送一个包含订单信息的交易                           | 需要打开钱包     |
 | [getrawtransactionorder](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getrawtransactionorder.md) | < txid > [verbose=0]                                | 根据指定的散列值，返回对应的交易信息                 |                  |
+| [get_tx_list](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/get_tx_list.md) | < address >< position>< offset>                     | 获取指定地址的交易列表                               |                  |
+| [gettransaction](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/gettransaction.md) | < address >< position>< offset>                     | 获取指定地址的交易                                   |                  |
+| [getutxoofaddress](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getutxoofaddress.md) | < address >                                         | 获取指定地址的未花费UTXO                             |                  |
 
 ## POST 请求示例
 
