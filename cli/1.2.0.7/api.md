@@ -80,6 +80,7 @@ JSON-RPC 服务器启动后，会监听 TCP 端口，默认端口如下。
 | [getblockhash](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getblockhash.md) | < index >                                     | 根据指定的索引，返回对应区块的散列值                 |                  |
 | [getblock](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getblock.md) | < hash > [verbose=0]                          | 根据指定的散列值，返回对应的区块信息                 |                  |
 | [getblock](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getblock2.md) | < index > [verbose=0]                         | 根据指定的索引，返回对应的区块信息                   |                  |
+| [getblockheader](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getblockheader.md) | < hash > [verbose=0]                          | 根据指定的散列值，返回对应的区块头信息。             |                  |
 | [getpeers](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getpeers.md) |                                               | 获得该节点当前已连接/未连接的节点列表                |                  |
 | [getconnectioncount](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getconnectioncount.md) |                                               | 获取节点当前的连接数                                 |                  |
 | [getversion](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getversion.md) |                                               | 获取查询节点的版本信息                               |                  |
@@ -91,9 +92,11 @@ JSON-RPC 服务器启动后，会监听 TCP 端口，默认端口如下。
 | [sendrawtransaction](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/sendrawtransaction.md) | < hex >                                       | 广播交易                                             |                  |
 | [getrawmempool](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getrawmempool.md) |                                               | 获取内存中未确认的交易列表                           |                  |
 | [getrawtransaction](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getrawtransaction.md) | < txid > [verbose=0]                          | 根据指定的散列值，返回对应的交易信息                 |                  |
+| [gettransactionheight](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/gettransactionheight.md) | < txid >                                      | 获取交易高度。                                       |                  |
 | [gettxout](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/gettxout.md) | < txid > < n >                                | 根据指定的散列和索引，返回对应的交易输出（零钱）信息 |                  |
 | [getstorage](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getstorage.md) | < script_hash > < key >                       | 根据合约脚本散列和存储的 key，返回存储的 value       |                  |
 | [getblocksysfee](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getblocksysfee.md) | < index >                                     | 根据指定的索引，返回截止到该区块前的系统手续费       |                  |
+| [getwalletheight](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/getwalletheight.md) |                                               | 获取当前钱包索引高度                                 | 需要打开钱包     |
 | [sendfrom](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/sendfrom.md) | < asset_id > < from >< to > < value > [fee=0] | 从指定地址，向指定地址转账                           | 需要打开钱包     |
 | [sendmany](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/sendmany.md) | < outputs_array > [fee=0] [change_address]    | 批量转账命令                                         | 需要打开钱包     |
 | [submitblock](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/submitblock.md) | < hex >                                       | 提交新的区块                                         | 需要成为共识节点 |
