@@ -102,6 +102,7 @@ JSON-RPC 服务器启动后，会监听 TCP 端口，默认端口如下。
 | [sendfrom](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/sendfrom.md) | < asset_id > < from >< to > < value > [fee=0]       | 从指定地址，向指定地址转账                           | 需要打开钱包     |
 | [sendtoaddress](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/sendtoaddress.md) | < asset_id > < address > < value > [fee=0]          | 向指定地址转账                                       | 需要打开钱包     |
 | [sendmany](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/sendmany.md) | < outputs_array > [fee=0] [change_address]          | 批量转账命令                                         | 需要打开钱包     |
+| [sendtocold](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/sendtocold.md) | < address >                                         | 将钱包内的资产转账到指定地址                         | 需要打开钱包     |
 | [submitblock](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/submitblock.md) | < hex >                                             | 提交新的区块                                         | 需要成为共识节点 |
 | [gettransactiondata](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/gettransactiondata.md) | < asset_id > < address > < value > [fee=0]          | 获取交易的十六进制字符串                             | 需要打开钱包     |
 | [verifytx](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.7/api/verifytx.md) | < hex >                                             | 验证交易是否有效                                     |                  |
