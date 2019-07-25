@@ -6,14 +6,15 @@
 
 ## 参数说明
 
-- <outputs_array> [fee=0] [change_address]
-  outputs_array：数组，数组中的每个元素的数据结构如下：
+<outputs_array> [fee=0] [change_address]
+
+- outputs_array：数组，数组中的每个元素的数据结构如下：
   {"asset": \<asset>,"value": \<value>,"address": \<address>}
   - asset：资产 ID（资产标识符），即该资产在注册时的 RegistTransaction 的交易 ID。其余资产 ID 可以通过CLI命令中的 llist asset 命令查询，也可以在区块链浏览器中查询
   - value：转账金额
   - address：收款地址
-  - fee：手续费，可选参数，默认为 0
-  - change_address：找零地址，可选参数，默认为钱包中第一个标准地址
+- fee：手续费，可选参数，默认为 0
+- change_address：找零地址，可选参数，默认为钱包中第一个标准地址
 
 ## 调用示例
 
