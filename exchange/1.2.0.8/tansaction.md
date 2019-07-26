@@ -278,7 +278,7 @@ symbol
 请求正文：
 
 ```
-Copy{
+{
   "jsonrpc": "2.0",
   "method": "invokefunction",
   "params": [
@@ -317,7 +317,7 @@ Copy{
 请求正文:
 
 ```
-Copy{
+{
   "jsonrpc": "2.0",
   "method": "invokefunction",
   "params": [
@@ -332,7 +332,7 @@ Copy{
 发送请求后，将收到如下响应：
 
 ```
-Copy{
+{
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
@@ -376,7 +376,7 @@ Copy{
 以下是一个 API 调用结果：
 
 ```
-Copy{
+{
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
@@ -578,7 +578,7 @@ send 0xecc6b20d3ccac1ee9ef109af5a7cdb85706b1df9 ATic5A7CmwxroWfZzYGXhF2vScyCaiYL
 发送请求后，将收到如下响应：
 
 ```
-Copy{
+{
     "jsonrpc":"2.0",
     "id":1,
     "result":{        "txid":"0xc6d4bf7c62fb47e0b2a6e838c3a1ca297622a1b1df7ceb2d30fa4ef8b7870700",
@@ -617,7 +617,7 @@ Copy{
 请求正文：
 
 ```
-Copy{
+{
     "jsonrpc":"2.0",
     "method":"sendmany",
     "params":[
@@ -641,7 +641,7 @@ Copy{
 发送请求后，将收到如下响应：
 
 ```
-Copy{
+{
     "jsonrpc": "2.0",
     "id": 1,
     "result": {
