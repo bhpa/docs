@@ -164,3 +164,13 @@ wallet.isScriptHash(scriptHashStr);
 ```
 
 These methods will return a boolean regarding the key format. No errors will be thrown.
+
+## Sign
+
+Signature of Hexadecimal Data of Transactions by Using Private Key.
+
+```js
+  const txHex = "8000000115226a71a6a3c15ffc105ed4bc113e6186c9c9e0905feae155bd403d425362a701000254a80a4c72f6157a7af0a753fc4ac4af6b159a17634dd57fecf319feab6ff713204e0000000000008226c513e2aa717f2f32d3c5fb2bcb492acfc3dc54a80a4c72f6157a7af0a753fc4ac4af6b159a17634dd57fecf319feab6ff7139f47de11000000008226c513e2aa717f2f32d3c5fb2bcb492acfc3dc"
+  var signature = wallet.sign(txHex,privateKey);
+```
+
