@@ -174,3 +174,11 @@ Signature of Hexadecimal Data of Transactions by Using Private Key.
   var signature = wallet.sign(txHex,privateKey);
 ```
 
+## getScriptHashFromAddress
+
+Converts an address to scripthash.
+
+```js
+var scripthash = wallet.getScriptHashFromAddress("AL2Eo2B1bWRSjizgRsFWoUShAYvv4NMiFq");
+```
+

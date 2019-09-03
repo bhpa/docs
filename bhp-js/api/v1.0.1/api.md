@@ -21,7 +21,7 @@ This module is structured slightly different from the rest of the modules. While
 
 They operate by taking in a configuration object which contains all the information necessary to request, construct and send a transaction. At the end, the same configuration object is returned.
 
-## makeTransaction（^v1.0.1）
+## makeTransaction
 
 ```js
   All hexadecimal strings(like prevHash and assetId) cannot begin with "0x".
