@@ -31,7 +31,7 @@ They operate by taking in a configuration object which contains all the informat
 const Bhp = require("./bhp-js");
 var api = Bhp.api;
 
-//You can access bhpnetapi(mainnet:https://api.bhpa.io/getUtxo?Address=youaraddress, testnet:http://47.103.46.191/interface/getUtxo?address=youraddress) to get UTXO of the specified address.
+//You can access bhpnetapi(mainnet:https://api.bhpa.io/getUtxo?address=youaraddress, testnet:http://47.103.46.191/interface/getUtxo?address=youraddress) to get UTXO of the specified address.
 const input = {     
     //utxo txid
     prevHash: "6a9d19b9a960d809759c0823c19f32245b38ea18f6783c595f8567010f14b188",
