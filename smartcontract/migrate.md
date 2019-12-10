@@ -50,15 +50,15 @@ private static Boolean Migrate(byte[] script, byte[] plist, byte rtype, Contract
 
 2. 点击 `高级` > `调用合约`，输入旧合约的 ScriptHash, 可以查看到已部署的旧合约信息。
 
-   [![调用合约](https://github.com/BhpAlpha/docs/raw/master/asset/register_asset.png/migrate.png)](https://github.com/BhpAlpha/docs/raw/master/asset/register_asset.png/migrate.png)
+   [![调用合约](https://github.com/BhpAlpha/docs/raw/master/asset/migrate.png)](https://github.com/BhpAlpha/docs/raw/master/asset/migrate.png)
 
 3. 点击 `调用`，输入调用 Migrate 接口所需要的参数。注意第一个参数输入之前复制的新合约脚本。
 
-   [![输入参数](https://github.com/BhpAlpha/docs/raw/master/asset/register_asset.png/migrate2.png)](https://github.com/BhpAlpha/docs/raw/master/asset/register_asset.png/migrate2.png)
+   [![输入参数](https://github.com/BhpAlpha/docs/raw/master/asset/migrate2.png)](https://github.com/BhpAlpha/docs/raw/master/asset/migrate2.png)
 
 4. 输入完成后点击 `试运行` 查看结果，可以看到返回1-True，手续费为 491 GAS。
 
-   [![试运行](https://github.com/BhpAlpha/docs/raw/master/asset/register_asset.png/migrate3.png)](https://github.com/BhpAlpha/docs/raw/master/asset/register_asset.png/migrate3.png)
+   [![试运行](https://github.com/BhpAlpha/docs/raw/master/asset/migrate3.png)](https://github.com/BhpAlpha/docs/raw/master/asset/migrate3.png)
 
 5. 点击 `调用`，等待区块链确认交易。
 
