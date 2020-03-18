@@ -10,3 +10,4 @@
 | ---------------------------------- | -------------------------------------- |
 | [主网与测试网](network/network.md) | [搭建私有链](network/private-chain.md) |
 
+<link href="index.css" rel="stylesheet" />
