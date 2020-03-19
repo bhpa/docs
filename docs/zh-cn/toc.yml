@@ -1,0 +1,26 @@
+- name: 站点地图
+  href: /docs/zh-cn/index.md
+- name: BHP 节点
+  items:
+  - name: 快速同步区块
+    href: /docs/zh-cn/node/syncblocks.md
+- name: BHP 网络
+  items:
+  - name: 主网与测试网
+    href: /docs/zh-cn/network/network.md
+  - name: 搭建私有链
+    href: /docs/zh-cn/network/private-chain.md
+- name: 交易所对接指南
+  itmes:
+  - name: 概述
+    href: /docs/zh-cn/exchange/general.md
+  - name: 部署 BHP 节点
+    href: /docs/zh-cn/exchange/deploynode.md
+  - name: 使用 BHP-CLI 客户端
+    href: /docs/zh-cn/exchange/client.md
+  - name: 处理资产交易
+    href: /docs/zh-cn/exchange/tansaction.md
+  - name: 给用户分发GAS
+    href: /docs/zh-cn/exchange/gas.md
+    
+    
