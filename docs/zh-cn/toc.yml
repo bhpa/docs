@@ -2,6 +2,12 @@
   href: /docs/zh-cn/index.md
 - name: BHP 节点
   items:
+  - name: BHP-GUI
+  items:
+    - name: 注册与分发资产
+      href: /docs/zh-cn/node/gui/asset.md 
+    - name: 零钱规整
+      href: /docs/zh-cn/node/gui/arrange.md 
   - name: 快速同步区块
     href: /docs/zh-cn/node/syncblocks.md
 - name: BHP 网络
