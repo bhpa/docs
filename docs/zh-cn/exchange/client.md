@@ -86,7 +86,7 @@ BHP-CLI 提供以下功能：
 
 - 用户第一次充值（BHP/BHP GAS）时，程序动态创建 BHP 地址，优点：无需人工定期创建地址；缺点：不方便备份钱包。
 
-  要动态创建地址，可以使用 BHP-CLI API 的 [getnewaddress](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.8/api/getnewaddress.md) 方法 实现。程序会返回创建的地址。
+  要动态创建地址，可以使用 BHP-CLI API 的 `getnewaddress`方法 实现。程序会返回创建的地址。
 
   ```
   请求正文：

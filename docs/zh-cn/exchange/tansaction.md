@@ -102,9 +102,9 @@ Height: 99/99/99, Nodes: 10
 
 交易所需要写代码监控每个区块的每个交易，在数据库中记录下所有充值提现交易。如果有充值交易就要修改数据库中的用户余额。
 
-BHP-CLI API 中的 `getblock < index> [verbose]` 方法提供了获取区块信息的功能，该方法中的 < index> 为区块索引。[verbose] 默认值为 0，表示返回的是区块序列化后的信息，用 16 进制字符串表示，如果从中获取详细信息需要反序列化。[verbose] 为 1 时返回的是对应区块的详细信息，用 Json 格式字符串表示。更多信息请参阅 [getblock](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.8/api/getblock2.md) 方法 。
+BHP-CLI API 中的 `getblock < index> [verbose]` 方法提供了获取区块信息的功能，该方法中的 < index> 为区块索引。[verbose] 默认值为 0，表示返回的是区块序列化后的信息，用 16 进制字符串表示，如果从中获取详细信息需要反序列化。[verbose] 为 1 时返回的是对应区块的详细信息，用 Json 格式字符串表示。更多信息请参阅 `getblock` 方法 。
 
-BHP-CLI API 中的 `listsinceblock <start_height> [target_confirmations]` 方法提供了获取钱包相关交易信息的功能，该方法中的 <start_height> 为开始查询交易的区块高度（包含该高度），[target_confirmations] 默认值为6，表示目标确认数。更多信息请参阅 [listsinceblock](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.8/api/listsinceblock.md) 方法。
+BHP-CLI API 中的 `listsinceblock <start_height> [target_confirmations]` 方法提供了获取钱包相关交易信息的功能，该方法中的 <start_height> 为开始查询交易的区块高度（包含该高度），[target_confirmations] 默认值为6，表示目标确认数。更多信息请参阅 `listsinceblock`方法。
 
 获取的区块信息中包含了交易输入和交易输出，交易所需要记录下所有和自己相关的交易，作为用户充值提现的交易记录。如果发现在交易的输出中有属于交易所的地址，则要修改数据库中该充值地址对应的用户 BHP 或 GAS 余额。
 
@@ -125,7 +125,7 @@ BHP-CLI API 中的 `listsinceblock <start_height> [target_confirmations]` 方法
 
 3. （可选）客服处理提现申请。
 
-4. 使用 BHP-CLI API 中的 `sendtoaddress <asset_id> <address> <value> [fee=0] [change_address] `方法 ，向用户提现地址发送交易。更多信息，请参阅 [sendtoaddress](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.11/api/sendtoaddress.md) 方法 。
+4. 使用 BHP-CLI API 中的 `sendtoaddress <asset_id> <address> <value> [fee=0] [change_address] `方法 ，向用户提现地址发送交易。更多信息，请参阅 `sendtoaddress` 方法 。
 
    - asset_id：资产 ID（资产标识符），即该资产在注册时的 RegistTransaction 的交易 ID。其余资产 ID 可以通过 CLI 命令 中的 list asset 命令查询，也可以在区块链浏览器中查询。
 
@@ -134,7 +134,7 @@ BHP-CLI API 中的 `listsinceblock <start_height> [target_confirmations]` 方法
    - fee：手续费，可选参数，默认为 0。
    - change_address ：找零地址，可选参数，默认为钱包中第一个标准地址。
 
-   要向多个地址批量发送交易，可以使用 API [sendmany](https://github.com/BhpAlpha/docs/tree/master/rpc/1.2.0.11/api/sendmany.md) 方法 。
+   要向多个地址批量发送交易，可以使用 API `sendmany` 方法 。
 
 5. 从返回的 Json 格式交易详情中提取交易 ID，记录在数据库中。
 
@@ -155,7 +155,7 @@ BHP-CLI API 中的 `listsinceblock <start_height> [target_confirmations]` 方法
 
 要查询用户账户余额，交易所需要进行以下操作：
 
-1. 编写 JSON 文件，使用 RPC API [invokefunction](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.8/api/invokefunction.md) 调用三个方法： `balanceOf` 、 `decimals` 和 `symbol` 。
+1. 编写 JSON 文件，使用 RPC API `invokefunction` 调用三个方法： `balanceOf` 、 `decimals` 和 `symbol` 。
 2. 向 BHP RPC 服务器发送文件请求。
 3. 根据返回值计算出用户余额。
 
@@ -367,7 +367,7 @@ symbol
 
 #### 调用 getapplicationlog
 
-使用 [getapplicationlog](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.11/api/getapplicationlog.md) 这个 API 来获取交易信息。
+使用 `getapplicationlog` 这个 API 来获取交易信息。
 
 可以看到在根目录下生成了一个 ApplicationLogs 文件夹，完整的合约日志会记录到该目录下，每笔 BRC-6 交易会记录在 leveldb 文件中，通过 API 来读取。
 

@@ -38,10 +38,10 @@ BHPGAS（缩写符号 GAS）共 1 亿份，代表了 BHP 区块链的使用权�
 
 以下 RPC 方法可以帮助交易所查询用户 GAS 信息。要查看调用的 JSON 文件示例，点击表格中的链接。
 
-| 方法                                                         | 描述                                 | 参数 |
-| ------------------------------------------------------------ | ------------------------------------ | ---- |
-| [showgas](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.8/api/showgas.md) | 返回本钱包所有可用和不可用的GAS      |      |
-| [claimgas](https://github.com/BhpAlpha/docs/blob/master/cli/1.2.0.8/api/claimgas.md) | 提取钱包中的 GAS到钱包第一个标准地址 |      |
+| 方法     | 描述                                 | 参数 |
+| -------- | ------------------------------------ | ---- |
+| showgas  | 返回本钱包所有可用和不可用的GAS      |      |
+| claimgas | 提取钱包中的 GAS到钱包第一个标准地址 |      |
 
 ## 用户提取 GAS
 
