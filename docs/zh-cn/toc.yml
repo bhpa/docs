@@ -160,6 +160,8 @@
         href: /docs/zh-cn/reference/rpc/api/validateaddress.md
       - name: verifytx
         href: /docs/zh-cn/reference/rpc/api/verifytx.md
+    - name: 更新记录
+      href: /docs/zh-cn/reference/rpc/update.md
   - name: 智能合约 API
     items:
     - name: API 参考
