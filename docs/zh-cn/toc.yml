@@ -3,7 +3,7 @@
 - name: BHP 节点
   items:
   - name: BHP-GUI
-  items:
+    items:
     - name: 注册与分发资产
       href: /docs/zh-cn/node/gui/asset.md 
     - name: 零钱规整
@@ -59,7 +59,7 @@
     - name: API 参考
       href: /docs/zh-cn/reference/rpc/api.md
     - name: v1.2.0.11
-    items:
+      items:
       - name: claimgas
         href: /docs/zh-cn/reference/rpc/api/claimgas.md
       - name: dumpprivkey
@@ -161,10 +161,13 @@
       - name: verifytx
         href: /docs/zh-cn/reference/rpc/api/verifytx.md
   - name: 智能合约 API
+    items:
     - name: API 参考
-    items: 
+      items: 
       - name: BHP
         href: /docs/zh-cn/reference/scapi/api/bhp.md
       - name: System
         href: /docs/zh-cn/reference/scapi/api/system.md
+  - name: BHP-VM指定集
+    href: /docs/zh-cn/reference/vm.md
     
