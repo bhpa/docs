@@ -165,4 +165,6 @@
     items: 
       - name: BHP
         href: /docs/zh-cn/reference/scapi/api/bhp.md
+      - name: System
+        href: /docs/zh-cn/reference/scapi/api/system.md
     
