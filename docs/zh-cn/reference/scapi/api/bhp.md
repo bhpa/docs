@@ -109,14 +109,5 @@ Bhp 命名空间是 Bhp 区块链所提供的 API，提供了访问区块链账�
 | Bhp.Storage.Put                | 插入操作，以 key-value 的形式向持久化存储区中插入数据 |
 | Bhp.Storage.Delete             | 删除操作，在持久化存储区中通过 key 删除对应的 value   |
 
-# System 命名空间
 
-System 命名空间是智能合约执行引擎（BhpVM）提供的 API，提供了访问该智能合约的执行环境的方法。
-
-| API                                           | 说明                                                 |
-| --------------------------------------------- | ---------------------------------------------------- |
-| System.ExecutionEngine.GetScriptContainer     | 获得该智能合约的脚本容器（最开始的触发者）           |
-| System.ExecutionEngine.GetExecutingScriptHash | 获得该智能合约执行的脚本散列                         |
-| System.ExecutionEngine.GetCallingScriptHash   | 获得该智能合约的调用者的脚本散列                     |
-| System.ExecutionEngine.GetEntryScriptHash     | 获得该智能合约的入口点（合约调用链的起点）的脚本散列 |
 
