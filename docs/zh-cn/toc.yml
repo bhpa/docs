@@ -170,6 +170,17 @@
         href: /docs/zh-cn/reference/scapi/api/bhp.md
       - name: System
         href: /docs/zh-cn/reference/scapi/api/system.md
+    - name: 框架
+      items:
+      - name: .net 框架
+        items:
+        - name: BHP
+        - name: System
+          items:
+          - name: ExecutionEngine          
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/system/ExecutionEngine.md
+        - name: System 命名空间
+          href: /docs/zh-cn/reference/scapi/frame/dotnet/system.md
   - name: BHP-VM指定集
     href: /docs/zh-cn/reference/vm.md
     
