@@ -35,9 +35,9 @@
     - name: 参数与返回值
       href: /docs/zh-cn/smartcontract/deploy/parameter.md
   - name: 测试  
-      href: /docs/zh-cn/smartcontract/test.md
+    href: /docs/zh-cn/smartcontract/test.md
   - name: 合约迁移  
-      href: /docs/zh-cn/smartcontract/migrate.md    
+    href: /docs/zh-cn/smartcontract/migrate.md    
   - name: 手续费  
     href: /docs/zh-cn/smartcontract/fees.md    
 - name: 交易所对接指南
@@ -54,6 +54,112 @@
     href: /docs/zh-cn/exchange/gas.md
 - name: 开发参考
   items:
+  - name: RPC API
+    items:
+    - name: API 参考
+      href: /docs/zh-cn/reference/rpc/api.md
+    - name: v1.2.0.11
+    items:
+      - name: claimgas
+        href: /docs/zh-cn/reference/rpc/api/claimgas.md
+      - name: dumpprivkey
+        href: /docs/zh-cn/reference/rpc/api/dumpprivkey.md
+      - name: exportaddresswif
+        href: /docs/zh-cn/reference/rpc/api/exportaddresswif.md
+      - name: get_tx_list
+        href: /docs/zh-cn/reference/rpc/api/get_tx_list.md
+      - name: getaccountstate
+        href: /docs/zh-cn/reference/rpc/api/getaccountstate.md
+      - name: getapplicationlog
+        href: /docs/zh-cn/reference/rpc/api/getapplicationlog.md
+      - name: getassetstate
+        href: /docs/zh-cn/reference/rpc/api/getassetstate.md
+      - name: getbalance
+        href: /docs/zh-cn/reference/rpc/api/getbalance.md
+      - name: getbestblockhash
+        href: /docs/zh-cn/reference/rpc/api/getbestblockhash.md
+      - name: getblock
+        href: /docs/zh-cn/reference/rpc/api/getblock.md
+      - name: getblock
+        href: /docs/zh-cn/reference/rpc/api/getblock2.md
+      - name: getblockcount
+        href: /docs/zh-cn/reference/rpc/api/getblockcount.md
+      - name: getblockhash
+        href: /docs/zh-cn/reference/rpc/api/getblockhash.md
+      - name: getblockheader
+        href: /docs/zh-cn/reference/rpc/api/getblockheader.md
+      - name: getblocksysfee
+        href: /docs/zh-cn/reference/rpc/api/getblocksysfee.md
+      - name: getconnectioncount
+        href: /docs/zh-cn/reference/rpc/api/getconnectioncount.md
+      - name: getcontractopcode
+        href: /docs/zh-cn/reference/rpc/api/getcontractopcode.md
+      - name: getcontractstate
+        href: /docs/zh-cn/reference/rpc/api/getcontractstate.md
+      - name: getnewaddress
+        href: /docs/zh-cn/reference/rpc/api/getnewaddress.md
+      - name: getpeers
+        href: /docs/zh-cn/reference/rpc/api/getpeers.md
+      - name: getrawmempool
+        href: /docs/zh-cn/reference/rpc/api/getrawmempool.md
+      - name: getrawtransaction
+        href: /docs/zh-cn/reference/rpc/api/getrawtransaction.md
+      - name: getrawtransactionorder
+        href: /docs/zh-cn/reference/rpc/api/getrawtransactionorder.md
+      - name: getstorage
+        href: /docs/zh-cn/reference/rpc/api/getstorage.md
+      - name: gettransaction
+        href: /docs/zh-cn/reference/rpc/api/gettransaction.md
+      - name: gettransactiondata
+        href: /docs/zh-cn/reference/rpc/api/gettransactiondata.md
+      - name: gettransactionheight
+        href: /docs/zh-cn/reference/rpc/api/gettransactionheight.md
+      - name: gettxout
+        href: /docs/zh-cn/reference/rpc/api/gettxout.md
+      - name: getutxoofaddress
+        href: /docs/zh-cn/reference/rpc/api/getutxoofaddress.md
+      - name: getutxos
+        href: /docs/zh-cn/reference/rpc/api/getutxos.md
+      - name: getvalidators
+        href: /docs/zh-cn/reference/rpc/api/getvalidators.md
+      - name: getversion
+        href: /docs/zh-cn/reference/rpc/api/getversion.md
+      - name: getwalletheight
+        href: /docs/zh-cn/reference/rpc/api/getwalletheight.md
+      - name: invoke
+        href: /docs/zh-cn/reference/rpc/api/invoke.md
+      - name: invokefunction
+        href: /docs/zh-cn/reference/rpc/api/invokefunction.md
+      - name: invokescript
+        href: /docs/zh-cn/reference/rpc/api/invokescript.md
+      - name: listaddress
+        href: /docs/zh-cn/reference/rpc/api/listaddress.md
+      - name: listsinceblock
+        href: /docs/zh-cn/reference/rpc/api/listsinceblock.md
+      - name: sendfrom
+        href: /docs/zh-cn/reference/rpc/api/sendfrom.md
+      - name: sendissuetransaction
+        href: /docs/zh-cn/reference/rpc/api/sendissuetransaction.md
+      - name: sendmany
+        href: /docs/zh-cn/reference/rpc/api/sendmany.md
+      - name: sendrawtransaction
+        href: /docs/zh-cn/reference/rpc/api/sendrawtransaction.md
+      - name: sendtoaddress
+        href: /docs/zh-cn/reference/rpc/api/sendtoaddress.md
+      - name: sendtoaddressorder
+        href: /docs/zh-cn/reference/rpc/api/sendtoaddressorder.md
+      - name: sendtocold
+        href: /docs/zh-cn/reference/rpc/api/sendtocold.md
+      - name: showgas
+        href: /docs/zh-cn/reference/rpc/api/showgas.md
+      - name: submitblock
+        href: /docs/zh-cn/reference/rpc/api/submitblock.md
+      - name: unlock
+        href: /docs/zh-cn/reference/rpc/api/unlock.md
+      - name: validateaddress
+        href: /docs/zh-cn/reference/rpc/api/validateaddress.md
+      - name: verifytx
+        href: /docs/zh-cn/reference/rpc/api/verifytx.md
   - name: 智能合约 API
     - name: API 参考
     items: 
