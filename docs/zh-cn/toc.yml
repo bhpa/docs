@@ -47,6 +47,12 @@
     href: /docs/zh-cn/tooldev/netProtocol.md
   - name: 钱包
     href: /docs/zh-cn/tooldev/wallets.md
+  - name: 交易
+    items:
+    - name: 交易
+      href: /docs/zh-cn/tooldev/transaction/transaction.md
+    - name: 交易流程
+      href: /docs/zh-cn/tooldev/transaction/execution.md
 - name: 交易所对接指南
   itmes:
   - name: 概述
