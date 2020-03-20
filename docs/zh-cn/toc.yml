@@ -39,7 +39,14 @@
   - name: 合约迁移  
     href: /docs/zh-cn/smartcontract/migrate.md    
   - name: 手续费  
-    href: /docs/zh-cn/smartcontract/fees.md    
+    href: /docs/zh-cn/smartcontract/fees.md
+- name: BHP 工具开发
+  - name: BHP-CLI 结构
+    href: /docs/zh-cn/tooldev/structure.md
+  - name: 网络协议
+    href: /docs/zh-cn/tooldev/netProtocol.md
+  - name: 钱包
+    href: /docs/zh-cn/tooldev/wallets.md
 - name: 交易所对接指南
   itmes:
   - name: 概述
