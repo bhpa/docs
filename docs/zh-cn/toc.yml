@@ -175,10 +175,43 @@
       - name: .net 框架
         items:
         - name: BHP
+          items:
+          - name: Account
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp/Account.md
+          - name: Asset
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp/Asset.md
+          - name: Block
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp/Block.md
+          - name: Blockchain
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp/Blockchain.md
+          - name: Contract
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp/Contract.md
+          - name: Header
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp/Header.md
+          - name: Runtime
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp/Runtime.md
+          - name: Storage
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp/Storage.md
+          - name: StorageContext
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp/StorageContext.md
+          - name: Transaction
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp/Transaction.md
+          - name: TransactionAttribute
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp/TransactionAttribute.md
+          - name: TransactionInput
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp/TransactionInput.md
+          - name: TransactionOutput
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp/TransactionOutput.md
+          - name: TriggerType
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp/TriggerType.md
+          - name: Validator
+            href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp/Validator.md
         - name: System
           items:
           - name: ExecutionEngine          
             href: /docs/zh-cn/reference/scapi/frame/dotnet/system/ExecutionEngine.md
+        - name: BHP 命名空间
+          href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp.md
         - name: System 命名空间
           href: /docs/zh-cn/reference/scapi/frame/dotnet/system.md
   - name: BHP-VM指定集
