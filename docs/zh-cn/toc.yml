@@ -2,10 +2,18 @@
   href: /docs/zh-cn/index.md
 - name: BHP 节点
   items:
+  - name: BHP-CLI
+    items:
+    - name: 安装
+      href: /docs/zh-cn/node/cli/setup.md
+    - name: 配置与启动
+      href: /docs/zh-cn/node/cli/config.md
+    - name: 节点列表
+      href: /docs/zh-cn/node/cli/seedlist.md    
   - name: BHP-GUI
     items:
     - name: 注册与分发资产
-      href: /docs/zh-cn/node/gui/asset.md 
+      href: /docs/zh-cn/node/gui/asset.md
     - name: 零钱规整
       href: /docs/zh-cn/node/gui/arrange.md 
   - name: 快速同步区块
