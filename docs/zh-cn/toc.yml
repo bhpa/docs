@@ -49,6 +49,31 @@
   - name: 手续费  
     href: /docs/zh-cn/smartcontract/fees.md
 - name: BHP 工具开发
+  items:
+  - name: 基本概念
+    items:
+    - name: 区块模型
+      items:
+      - name: 区块
+        href: /docs/zh-cn/tooldev/concept/blockchain/block.md
+      - name: 通证
+        href: /docs/zh-cn/tooldev/concept/blockchain/token.md
+      - name: UTXO
+        href: /docs/zh-cn/tooldev/concept/blockchain/utxo.md
+      - name: 账户与资产
+        href: /docs/zh-cn/tooldev/concept/blockchain/accountAsset.md
+    - name: 收费模型
+      href: /docs/zh-cn/tooldev/concept/chargingModel.md
+    - name: 密码学
+      items:
+      - name: 编码算法
+        href: /docs/zh-cn/tooldev/concept/cryptography/encode.md
+      - name: 哈希算法
+        href: /docs/zh-cn/tooldev/concept/cryptography/hash.md
+      - name: 加密算法
+        href: /docs/zh-cn/tooldev/concept/cryptography/encryption.md
+    - name: 大小端序的使用
+      href: /docs/zh-cn/tooldev/concept/endian.md
   - name: BHP-CLI 结构
     href: /docs/zh-cn/tooldev/structure.md
   - name: 网络协议
