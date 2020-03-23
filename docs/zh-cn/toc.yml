@@ -28,12 +28,24 @@
   items:
   - name: 快速入门（C#）
     items:
+    - name: 介绍
+      href: /docs/zh-cn/smartcontract/start/introduction.md
     - name: 准备工作
       href: /docs/zh-cn/smartcontract/start/preparation.md
+    - name: 搭建网络环境
+      href: /docs/zh-cn/smartcontract/start/enviroment.md
+    - name: 开发示例合约
+      href: /docs/zh-cn/smartcontract/start/develop.md
+    - name: 部署并调用合约
+      href: /docs/zh-cn/smartcontract/start/deploy.md
   - name: 合约编写
     items:
     - name: 合约编写基础
       href: /docs/zh-cn/smartcontract/write/basics.md
+    - name: 编写限制
+      href: /docs/zh-cn/smartcontract/write/limitation.md
+    - name: BRC20
+      href: /docs/zh-cn/smartcontract/write/brc20.md
   - name: 部署和调用
     items:
     - name: 部署合约

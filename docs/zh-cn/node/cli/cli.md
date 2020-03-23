@@ -400,5 +400,5 @@ Data relay success, the hash is shown as follows:
 
 ### start consensus
 
-启动共识。启动共识的前提是该钱包有共识的权限，在 bhp 主网上可以通过投票选举获得共识的权限，如果自己部署的私有链，可以在 `protocol.json` 中设置共识节点的公钥，详情可参考 [私链搭建](../../network/private-chain/private-chain.md)。
+启动共识。启动共识的前提是该钱包有共识的权限，在 bhp 主网上可以通过投票选举获得共识的权限，如果自己部署的私有链，可以在 `protocol.json` 中设置共识节点的公钥。
 
