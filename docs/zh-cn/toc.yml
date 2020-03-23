@@ -1,5 +1,9 @@
 - name: 站点地图
   href: /docs/zh-cn/index.md
+- name: BHP 介绍
+  items:
+  - name: BhpVM
+    href: /docs/zh-cn/basic/vm.md
 - name: BHP 节点
   items:
   - name: BHP-CLI
@@ -9,13 +13,25 @@
     - name: 配置与启动
       href: /docs/zh-cn/node/cli/config.md
     - name: 节点列表
-      href: /docs/zh-cn/node/cli/seedlist.md    
+      href: /docs/zh-cn/node/cli/seedlist.md
+    - name: 命令参考
+      href: /docs/zh-cn/node/cli/cli.md
   - name: BHP-GUI
     items:
+    - name: 下载客户端
+      href: /docs/zh-cn/node/gui/install.md
+    - name: 钱包
+      href: /docs/zh-cn/node/gui/wallet.md
+    - name: 交易
+      href: /docs/zh-cn/node/gui/transc.md
     - name: 注册与分发资产
       href: /docs/zh-cn/node/gui/asset.md
+    - name: 与智能合约交互
+      href: /docs/zh-cn/node/gui/sc.md
     - name: 零钱规整
       href: /docs/zh-cn/node/gui/arrange.md 
+    - name: 其它功能
+      href: /docs/zh-cn/node/gui/other.md
   - name: 快速同步区块
     href: /docs/zh-cn/node/syncblocks.md
 - name: BHP 网络
