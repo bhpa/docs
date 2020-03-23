@@ -61,8 +61,20 @@
       href: /docs/zh-cn/tooldev/transaction/transaction.md
     - name: 交易流程
       href: /docs/zh-cn/tooldev/transaction/execution.md
+  - name: BHP SDK
+    items:
+    - name: 关于 BHP SDK
+      href: /docs/zh-cn/tooldev/sdk/introduction.md
+    - name: 数据类型转换
+      href: /docs/zh-cn/tooldev/sdk/conversion.md
+    - name: 账户
+      href: /docs/zh-cn/tooldev/sdk/account.md
+    - name: 钱包
+      href: /docs/zh-cn/tooldev/sdk/wallet.md
+    - name: 交易
+      href: /docs/zh-cn/tooldev/sdk/tx.md
 - name: 交易所对接指南
-  itmes:
+  items:
   - name: 概述
     href: /docs/zh-cn/exchange/general.md
   - name: 部署 BHP 节点
