@@ -53,6 +53,12 @@
     href: /docs/zh-cn/tooldev/structure.md
   - name: 网络协议
     href: /docs/zh-cn/tooldev/netProtocol.md
+  - name: 共识机制
+    items:
+    - name: 共识算法
+      href: /docs/zh-cn/tooldev/consensus/algorithm.md
+    - name: 共识协议
+      href: /docs/zh-cn/tooldev/consensus/protocol.md
   - name: 钱包
     href: /docs/zh-cn/tooldev/wallets.md
   - name: 交易
