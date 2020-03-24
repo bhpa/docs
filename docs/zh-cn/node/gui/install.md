@@ -10,7 +10,7 @@
 
 > [!Note]
 >
-> 客户端适应系统为： Windows 7 SP1 / Windows 8 / Windows 10。
+> 客户端适应系统为：Windows 10。
 >
 > 请确认你的 Windows 系统已安装 [.NET Framework 4.7.1](https://www.microsoft.com/net/download/framework) 。
 
