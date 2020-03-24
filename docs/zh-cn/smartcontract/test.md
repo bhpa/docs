@@ -61,6 +61,8 @@
 
 3. 使用 postman 进行测试
 
+   ![test2](../assets/test2.png)
+
 "state": "HALT, BREAK" 表示测试成功。
 
 Stack 是留在栈上的值，此值为 string “Hello, World!” 对应的 bytearray。
@@ -103,6 +105,8 @@ Stack 是留在栈上的值，此值为 string “Hello, World!” 对应的 byt
    ```
 
 3. 使用 PostMan 进行测试
+
+   ![test3](../assets/test3.png)
 
 ### 示例 3 - 测试已经部署到链上的合约
 
