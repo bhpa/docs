@@ -6,10 +6,11 @@
 
 ```json
 {
-  "ProtocolConfiguration": {
+  "ProtocolConfiguration": {    
     "Magic": ...,
     "AddressVersion": ...,
     "SecondsPerBlock": ...,
+    "LowPriorityThreshold": ...,
     "StandbyValidators": [
       ...
     ],
