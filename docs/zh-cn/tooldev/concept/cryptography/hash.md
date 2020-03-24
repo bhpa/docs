@@ -94,8 +94,8 @@ Example:
 
 应用场景：
 
-- BRC2格式密钥的导出。
+- BRC2 格式密钥的导出。
 
-- BRC6钱包的密码效验。
+- BRC6 钱包的密码效验。
 
 更多信息，请参考<https://en.wikipedia.org/wiki/Scrypt>。

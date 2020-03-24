@@ -12,10 +12,10 @@
 
 以下是一个钱包的标准地址和 ScriptHash 大小端序的示例： 
 
-- 地址 (address): AXfgAN3coFD1LXbAyCnnMS8LmmSNVrJCt9
+- 地址 (address): ARwMufsDMXFDvtCH9cpjxUHD1pBsZvRkJy
 - ScriptHash
-  - 大端序：0x edf0b786bf74dd09372cd006ef55eb73e82f5cbb
-  - 小端序：bb5c2fe873eb55ef06d02c3709dd74bf86b7f0ed
+  - 大端序：0x 51afd1c72987b773049414c1f96c6b83d4977c6f
+  - 小端序：6f7c97d4836b6cf9c114940473b78729c7d1af51
 
 要进行钱包地址与 ScriptHash 的互转，以及 ScriptHash 的大小端序之间的互转，可以使用以下一种方法:
 
@@ -24,9 +24,9 @@
 ### 合约的ScriptHash
 每一个合约部署成功后，会生成一个 ScriptHash 作为该合约的唯一标识符。BHP 的合约对应的 ScriptHash 可以转换为 20 个字节的标准地址，用来接收全局资产或者 BRC20 资产。这种情况下合约的 ScriptHash 作为大端序使用，例如：
 
-- CGas ScriptHash (大端序)：0x 74f2dc36a68fdc4682034178eb2220729231db76 
+- CGas ScriptHash (大端序)：0x 51afd1c72987b773049414c1f96c6b83d4977c6f
 
-- CGas合约对应的地址：AScKxyXmNtEnTLTvbVhNQyTJmgytxhwSnM
+- CGas合约对应的地址：ARwMufsDMXFDvtCH9cpjxUHD1pBsZvRkJy
 
 ## 大小端序使用场景
 钱包地址的使用常见于全局资产转账交易和智能合约调用，这里我们主要针对这两个场景来介绍如何使用地址ScriptHash的字节序格式。
@@ -37,7 +37,7 @@
 var outputs = new List<TransactionOutput>{ new TransactionOutput()
 {
     AssetId = Blockchain.UtilityToken.Hash, //GAS对应的AssetId
-    ScriptHash = "AXfgAN3coFD1LXbAyCnnMS8LmmSNVrJCt9".ToScriptHash(), //地址对应的大端序 ScriptHash
+    ScriptHash = "ARwMufsDMXFDvtCH9cpjxUHD1pBsZvRkJy".ToScriptHash(), //地址对应的大端序 ScriptHash
     Value = new Fixed8((long)(0.999 * (long)Math.Pow(10, 8)))
 }}.ToArray();
 ```
@@ -47,7 +47,7 @@ var outputs = new List<TransactionOutput>{ new TransactionOutput()
 
 #### 通过RPC接口调用合约
 
-这里以 [InvokeFunction](../../reference/rpc/api/invokefunction.html) 为例，调用 BRC20 合约的 balanceOf 方法。
+这里以 [InvokeFunction](../../reference/rpc/api/invokefunction.md) 为例，调用 BRC20 合约的 balanceOf 方法。
 
 如果传入的地址，参数类型为 Hash160，需要使用**大端序**的地址 ScriptHash。
 
@@ -61,7 +61,7 @@ var outputs = new List<TransactionOutput>{ new TransactionOutput()
             [
             {
                 "type": "Hash160", //数据类型使用Hash160
-                "value": "edf0b786bf74dd09372cd006ef55eb73e82f5cbb" //地址ScriptHash为大端序
+                "value": "51afd1c72987b773049414c1f96c6b83d4977c6f" //地址ScriptHash为大端序
             }
             ]
         ],
@@ -81,7 +81,7 @@ var outputs = new List<TransactionOutput>{ new TransactionOutput()
         [
         {
             "type": "ByteArray", //数据类型ByteArray
-            "value": "bb5c2fe873eb55ef06d02c3709dd74bf86b7f0ed" //地址ScriptHash为小端序
+            "value": "6f7c97d4836b6cf9c114940473b78729c7d1af51" //地址ScriptHash为小端序
         }
         ]
     ],
@@ -96,12 +96,12 @@ var outputs = new List<TransactionOutput>{ new TransactionOutput()
 
 ```
 const Bhp = require("./bhp-js");
-const privateKey = "3574b22c4faaece41cacd7beff5b1589d6dbd1b251cf9ed20abdc2f81f6d3e01";
+const privateKey = "1f9f747e54f92484a2c3b59fb274c87021461238c78f42515fa712012a8e3b6a";
 const account = new Bhp.wallet.Account(privateKey);
-const cgasContractHash = "edf0b786bf74dd09372cd006ef55eb73e82f5cbb"; //CGAS ScriptHash
+const cgasContractHash = "6f7c97d4836b6cf9c114940473b78729c7d1af51"; //CGAS ScriptHash
 
-const fromAddressLittle = Bhp.u.reverseHex(Bhp.wallet.getScriptHashFromAddress("AXfgAN3coFD1LXbAyCnnMS8LmmSNVrJCt9")); // address -> ScriptHash (小端序)
-const toAddressLittle = NeBhpon.u.reverseHex(Bhp.wallet.getScriptHashFromAddress("ATe3wDE9MPQXZuvhgPREdQNYkiCBF7JShY")); // address -> ScriptHash (小端序)
+const fromAddressLittle = Bhp.u.reverseHex(Bhp.wallet.getScriptHashFromAddress("ARwMufsDMXFDvtCH9cpjxUHD1pBsZvRkJy")); // address -> ScriptHash (小端序)
+const toAddressLittle = NeBhpon.u.reverseHex(Bhp.wallet.getScriptHashFromAddress("ARwMufsDMXFDvtCH9cpjxUHD1pBsZvRkJy")); // address -> ScriptHash (小端序)
 sb.emitAppCall(cgasContractHash, "balanceOf", [fromAddressLittle, toAddressLittle, 250000000]);
 var script = sb.str;
 
@@ -115,5 +115,5 @@ rpcClient.invokeScript(script)
     });
 ```
 
-合约执行完成后，可以通过[getapplicationlog 方法](../../reference/rpc/api/getapplicationlog.md) 查看执行日志，执行日志在输出地址的时候，是以 ByteArray 为数据类型，输出地址相对应的小端序 ScriptHash。
+合约执行完成后，可以通过 [getapplicationlog 方法](../../reference/rpc/api/getapplicationlog.md) 查看执行日志，执行日志在输出地址的时候，是以 ByteArray 为数据类型，输出地址相对应的小端序 ScriptHash。
 

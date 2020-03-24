@@ -21,9 +21,9 @@ Example:
 
 | 名称 | 数值 |
 | --- | --- |
-| 私钥   | 3574b22c4faaece41cacd7beff5b1589d6dbd1b251cf9ed20abdc2f81f6d3e01 |
-| 公钥(压缩型) | 020a2a4f2ef618d7d38606c2a65ff941b8898d00cdade6e4ed2437052cffde16d2 |
-| 公钥(非压缩型) | 040a2a4f2ef618d7d38606c2a65ff941b8898d00cdade6e4ed2437052cffde16d23e9627550b107bac5f3e26fc766a93ea496b17be5023a97eee0ba3769f379dae |
+| 私钥   | 1f9f747e54f92484a2c3b59fb274c87021461238c78f42515fa712012a8e3b6a |
+| 公钥(压缩型) | 03705ff82d610058bb8186796d3f9210c68d0cac81ab167cd69946c447f5ef4764 |
+| 公钥(非压缩型) | 04705ff82d610058bb8186796d3f9210c68d0cac81ab167cd69946c447f5ef4764e1aacc0b4d7427fd2f5085fc94b9bf7e66910e3f897e503c5de465abc44af59d |
 
 应用场景：
 
@@ -67,9 +67,9 @@ Example:
 | 名称 | 数值                                                         |
 | ---- | ------------------------------------------------------------ |
 | 消息 | Hello World                                                  |
-| 私钥 | 3574b22c4faaece41cacd7beff5b1589d6dbd1b251cf9ed20abdc2f81f6d3e01 |
-| 公钥 | 040a2a4f2ef618d7d38606c2a65ff941b8898d00cdade6e4ed2437052cffde16d23e9627550b107bac5f3e26fc766a93ea496b17be5023a97eee0ba3769f379dae |
-| 签名 | 54a6faec9159e98d45f5868e5799762de290c3e7e67e013c1bd6a2a6f8a2e500<br>a4d29567359bd171ddebc547dcddd670fb6b367e3e19298d7672f0422b5a2c52 |
+| 私钥 | 1f9f747e54f92484a2c3b59fb274c87021461238c78f42515fa712012a8e3b6a |
+| 公钥 | 04705ff82d610058bb8186796d3f9210c68d0cac81ab167cd69946c447f5ef4764e1aacc0b4d7427fd2f5085fc94b9bf7e66910e3f897e503c5de465abc44af59d |
+| 签名 | bf36b500c96b9076173fb1510db0dacc87d16c598b9aac169e3cf26122b80322e32b2829b14bf75812cd122b68028fdb0eed919f9cecc0713449ccaaa7c4defd |
 
 应用场景：
 
