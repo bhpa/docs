@@ -78,6 +78,12 @@
     href: /docs/zh-cn/smartcontract/migrate.md    
   - name: 手续费  
     href: /docs/zh-cn/smartcontract/fees.md
+  - name: 合约示例
+    items:
+    - name: Hello World
+      href: /docs/zh-cn/smartcontract/samples/helloWorld.md
+    - name: 锁仓合约教程
+      href: /docs/zh-cn/smartcontract/samples/lock.md
 - name: BHP 工具开发
   items:
   - name: 基本概念
