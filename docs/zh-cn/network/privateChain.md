@@ -6,6 +6,8 @@
 
 首先安装 BHP-CLI，并将节点文件复制为 4 份，文件夹名分别命名为 bhp-cli1、bhp-cli2、bhp-cli3、bhp-cli4。
 
+安装过程请参考 [Bhp 节点安装](../node/cli/setup.md)。
+
 ## 安装插件
 
 要使节点达成共识，需要安装 SimplePolicy 插件启用共识策略。
