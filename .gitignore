@@ -7,8 +7,9 @@
 !.gitignore
 !*.md
 !*.png
+!*.jpg
 !*.vsdx
 !*.yml
 !*.css
 !*.json
-!*.jpg
+!*.txt
