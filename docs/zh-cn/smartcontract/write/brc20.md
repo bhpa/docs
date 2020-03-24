@@ -1,4 +1,4 @@
-# BRC20
+# BRC-20
 
 其目的是为 BHP 建立标准的 token 化智能合约通用交互机制。BRC20 资产与 UTXO 不同，它没有采用 UTXO 模型，而是在合约存储区内记账，通过对存储区内不同账户 hash 所记录余额数值的变化，完成交易。
 
@@ -70,7 +70,7 @@ public static bool transfer(byte[] from, byte[] to, BigInteger amount)
 
 如果方法执行成功，会触发转移事件，并返回 true，即使数量为 0 或者 from 和 to 是同一个地址。
 
-函数会检查 from 的地址是否等于调用合约的 hash，如果是，则转移会被处理；否则，函数会调用 SYSCALL `Neo.Runtime.CheckWitness`来确认转移。
+函数会检查 from 的地址是否等于调用合约的 hash，如果是，则转移会被处理；否则，函数会调用 SYSCALL `Bhp.Runtime.CheckWitness`来确认转移。
 
 如果 to 地址是一个部署合约，函数会检查其 payable 标志位来决定是否把 token 转移到该合约。
 

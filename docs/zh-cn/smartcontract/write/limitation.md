@@ -17,9 +17,9 @@
 另外对 C# 的 `BigInteger` 也可以支持：
 
 ```c#
-ulong total_neo = 200;
-BigInteger ico_neo = 300;
-BigInteger balance_neo = total_neo - ico_neo;
+ulong total = 200;
+BigInteger ico = 300;
+BigInteger balance = total - ico;
 ulong value = 150;
 ```
 
@@ -105,7 +105,7 @@ public class info
 
 数组支持，行为基本和 C# 一致。
 
-Byte[] 例外，因为 byte[] 是 NeoVM 底层的特别类型。
+Byte[] 例外，因为 byte[] 是 BhpVM 底层的特别类型。
 
 对一般数组可以用的设置其中的值的操作
 
@@ -129,7 +129,7 @@ return some;
 
 LIST 功能可以用数组替代。
 
-Dictionary 功能可以用 NEO DOTNET DEVPACK 中的 MAP 替代。
+Dictionary 功能可以用 BHP DOTNET DEVPACK 中的 MAP 替代。
 
 ### C# 变量的支持
 
@@ -137,7 +137,7 @@ Dictionary 功能可以用 NEO DOTNET DEVPACK 中的 MAP 替代。
 
 ```c#
 private const ulong total = total_ico_usd / to_usd * decimals;
-public static BigInteger TotalIcoNeo() => total;
+public static BigInteger TotalIco() => total;
 ```
 
 ### C# 委托和事件的支持
