@@ -4,11 +4,11 @@
 
 | BHP 介绍             |      |
 | -------------------- | ---- |
-| [BhpVm](basic/vm.md) |      |
+| [BhpVM](basic/vm.md) |      |
 
 | BHP 节点                           |                                |                              |                                       |
 | ---------------------------------- | ------------------------------ | ---------------------------- | ------------------------------------- |
-| [节点介绍](node/introduction.md)   | [BHP-GUI](node/gui/install.md) | [BHP-CLI](node/cli/setup.md) | [快速同步区块](node/syncblocks.md) |  
+| [节点介绍](node/introduction.md)   | [BHP-GUI](node/gui/install.md) | [BHP-CLI](node/cli/setup.md) | [快速同步区块](node/syncblocks.md) |
 
 | BHP 网络                           |                                        |
 | ---------------------------------- | -------------------------------------- |
