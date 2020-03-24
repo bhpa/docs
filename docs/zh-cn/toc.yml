@@ -6,6 +6,8 @@
     href: /docs/zh-cn/basic/vm.md
 - name: BHP 节点
   items:
+  - name: 节点介绍
+    href: /docs/zh-cn/node/introduction.md
   - name: BHP-CLI
     items:
     - name: 安装

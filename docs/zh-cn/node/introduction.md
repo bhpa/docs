@@ -61,7 +61,7 @@ BHP-CLI 本身不提供远程开关钱包功能，打开钱包时也没有验证
 
 |                    | Mainnet | Testnet |
 | ------------------ | ------- | ------- |
-| JSON-RPC via HTTPS | 20557   | 20331   |
+| JSON-RPC via HTTPS | 20557   | 20557   |
 | JSON-RPC via HTTP  | 20557   | 20557   |
 | P2P via TCP        | 20555   | 20555   |
 | P2P via WebSocket  | 20556   | 20556   |
