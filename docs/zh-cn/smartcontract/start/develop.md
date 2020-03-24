@@ -5,7 +5,7 @@
 在本节我们将完成以下任务：
 
 - 安装合约开发环境
-- 创建一个 BRC20 合约项目
+- 创建一个 BRC-20 合约项目
 - 编译合约
 
 ## 安装开发环境
@@ -19,6 +19,8 @@
 ### 安装 BhpContractPlugin 插件
 
 打开 Visual Studio 2019，点击 `工具` -> `扩展和更新` ，在左侧点击 `联机` ，搜索 BHP，安装 BhpContractPlugin 插件（该过程需要联网）。
+
+![develop2](../../assets/develop2.png)
 
 ### 配置编译器
 
@@ -43,32 +45,32 @@
 
 3. 在弹出来的窗口中点击 `新建` 并输入你自己的 bhpn.exe 所在的文件夹目录，点击 `确定` 。
 
-   ![develop2](../../assets/develop2.png)
+   ![develop3](../../assets/develop3.png)
 
 > [!Note]
 >
-> 在环境变量中不要添加 “…… neon.exe” 字样的路径，要填写 bhpn.exe **所在的文件夹目录** 而非 bhpn.exe 本身的路径。
+> 在环境变量中不要添加 “…… bhpn.exe” 字样的路径，要填写 bhpn.exe **所在的文件夹目录** 而非 bhpn.exe 本身的路径。
 
 添加完 path 后，运行 CMD 或者 PowerShell 测试一下（如果添加 path 前就已经启动了 CMD 则要关掉重启），输入 bhpn 后，没有报错，如图所示输出版本号的提示信息即表示环境变量配置成功。
 
-![develop3](../../assets/develop3.png)
+![develop4](../../assets/develop4.png)
 
 ## 创建 BHP 合约项目
 
-完成以上步骤后，即可在 Visual Studio 2019 中创建 NEO 智能合约项目（.NET Framework 版本任意）：
+完成以上步骤后，即可在 Visual Studio 2019 中创建 BHP 智能合约项目（.NET Framework 版本任意）：
 
 1. 点击 `文件` -> `新建` -> `项目`。
 2. 在列表中选择 `BhpContract` 并进行必要设置后，点击 `确定`。
 
-![develop4](../../assets/develop4.png)
+![develop5](../../assets/develop5.png)
 
 创建项目后，会自动生成一个 C# 文件，默认的类继承于 SmartContract，如图，此刻你已经拥有一个 Hello World 了！
 
-![develop5](../../assets/develop5.png)
+![develop6](../../assets/develop6.png)
 
 当然这只是一个简单的向私有化存储区中以 key-value 方式存储数据的操作。
 
-## 编辑 BRC20 代码
+## 编辑 BRC-20 代码
 
 很多开发者比较关心的是如何在 BHP 公链上发布自己的合约资产，现在我们就在私链上一步步实现。
 
@@ -102,7 +104,7 @@ namespace Brc20Contract
         [DisplayName("transfer")]
         public static event Action<byte[], byte[], BigInteger> Transferred;
 
-        private static readonly byte[] Owner = "AXo6nRuiFxLqS9XnYS8x1f25eM5mGxkAq7".ToScriptHash(); //Owner Address
+        private static readonly byte[] Owner = "ARwMufsDMXFDvtCH9cpjxUHD1pBsZvRkJy".ToScriptHash(); //Owner Address
         private static readonly BigInteger TotalSupplyValue = 10000000000000000;//总资产
 
         public static object Main(string method, object[] args)
