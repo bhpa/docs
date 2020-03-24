@@ -12,5 +12,5 @@ BhpGas（简称 GAS） 伴随着每个新区块的生成而产生，会按照 BH
 2. 点击 `高级` ->`提取 BhpGas` 。
 3. 点击 `全部提取`。
 
-![](../assets/gui_37.png)
+![gui_gas](../../assets/gui_gas.png)
 
