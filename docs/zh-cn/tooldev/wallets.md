@@ -24,9 +24,9 @@ BHP 的钱包可以自行设计和修改，但需要满足一定的规则。
 
 | 格式 | 数值 |
 |---|---|
-| byte[] | [0x53,0x116,0x178,0x44,0x79,0x170,0x236,0x228,0x28,0x172,0x215,0x190,0x255,0x91,0x21,0x137,0x214,0x219,0x209,0x178,0x81,0x207,0x158,0x210,0x10,0x189,0x194,0x248,0x31,0x109,0x62,0x01] |
-| hexstring | 3574b22c4faaece41cacd7beff5b1589d6dbd1b251cf9ed20abdc2f81f6d3e01 |
-| wif | 6PYTDmusDiSixF9jynpJoFeCtexdy1L2Qfx2Y3umaSatdHHxzRnhgUv3dT |
+| byte[] | [0x1f,0x9f,0x74,0x7e,0x54,0xf9,0x24,0x84,0xa2,0xc3,0xb5,0x9f,0xb2,0x74,0xc8,0x70,0x21,0x46,0x12,0x38,0xc7,0x8f,0x42,0x51,0x5f,0xa7,0x12,0x01,0x2a,0x8e,0x3b,0x6a] |
+| hexstring | 1f9f747e54f92484a2c3b59fb274c87021461238c78f42515fa712012a8e3b6a |
+| wif | KxHBVC6m1MZBPw1H9TTpwN9JjSan64in7ugnTTHfGCgAwBfZNypC |
 
 ### 公钥
 
@@ -44,9 +44,9 @@ Example:
 
 | 格式 | 数值 |
 |----------|:-------------:|
-| 私钥 | 3574b22c4faaece41cacd7beff5b1589d6dbd1b251cf9ed20abdc2f81f6d3e01 |
-| 公钥（压缩型） | 020a2a4f2ef618d7d38606c2a65ff941b8898d00cdade6e4ed2437052cffde16d2 |
-| 公钥（非压缩型） | 040a2a4f2ef618d7d38606c2a65ff941b8898d00cdade6e4ed2437052cffde16d23e9627550b107bac5f3e26fc766a93ea496b17be5023a97eee0ba3769f379dae |
+| 私钥 | 1f9f747e54f92484a2c3b59fb274c87021461238c78f42515fa712012a8e3b6a |
+| 公钥（压缩型） | 03705ff82d610058bb8186796d3f9210c68d0cac81ab167cd69946c447f5ef4764 |
+| 公钥（非压缩型） | 04705ff82d610058bb8186796d3f9210c68d0cac81ab167cd69946c447f5ef4764e1aacc0b4d7427fd2f5085fc94b9bf7e66910e3f897e503c5de465abc44af59d |
 
 ### 地址
 
@@ -66,9 +66,9 @@ Example:
 
 | 格式 | 数值 |
 |----------|:-------------:|
-| 私钥 | 3574b22c4faaece41cacd7beff5b1589d6dbd1b251cf9ed20abdc2f81f6d3e01 |
-| 压缩型公钥 | 020a2a4f2ef618d7d38606c2a65ff941b8898d00cdade6e4ed2437052cffde16d2 |
-| 地址 | AXfgAN3coFD1LXbAyCnnMS8LmmSNVrJCt9 |
+| 私钥 | 1f9f747e54f92484a2c3b59fb274c87021461238c78f42515fa712012a8e3b6a |
+| 压缩型公钥 | 03705ff82d610058bb8186796d3f9210c68d0cac81ab167cd69946c447f5ef4764 |
+| 地址 | ARwMufsDMXFDvtCH9cpjxUHD1pBsZvRkJy |
 
 ### 数字证书
 
@@ -105,13 +105,13 @@ BRC6 钱包文件是 BHP 满足 BRC6 标准的钱包存储数据所使用存储�
 	},
 	"accounts": [
 		{
-			"address": "AXfgAN3coFD1LXbAyCnnMS8LmmSNVrJCt9",
+			"address": "ARwMufsDMXFDvtCH9cpjxUHD1pBsZvRkJy",
 			"label": null,
 			"isDefault": false,
 			"lock": false,
-			"key": "6PYTDmusDiSixF9jynpJoFeCtexdy1L2Qfx2Y3umaSatdHHxzRnhgUv3dT",
+			"key": "6PYQFzKYCYdPB31fo2uhZSaUsTon9DY4TMNMd56nrzLsW8By87JuPZU4P1",
 			"contract": {
-				"script": "21020a2a4f2ef618d7d38606c2a65ff941b8898d00cdade6e4ed2437052cffde16d2ac",
+				"script": "2103705ff82d610058bb8186796d3f9210c68d0cac81ab167cd69946c447f5ef4764ac",
 				"parameters": [
 					{
 						"name": "signature",
@@ -121,7 +121,7 @@ BRC6 钱包文件是 BHP 满足 BRC6 标准的钱包存储数据所使用存储�
 				"deployed": false
 			},
 			"extra": null
-		}		
+		}
 	],
 	"extra": null
 }
@@ -180,7 +180,7 @@ BRC 6钱包采用了以 scrypt 为核心算法的相关技术作为钱包的加�
 
 3. 把私钥和 derivedhalf1 做异或，然后用 derivedhalf2 对其做 AES256 加密得到 encryptedkey
 
-4. 按照以下格式拼接数据，并对其做Base58Check编码得到NEP2Key：
+4. 按照以下格式拼接数据，并对其做 Base58Check 编码得到 BRC2Key：
 
     `0x01` + `0x42` + `0xe0` + `地址哈希` + `encryptedkey`
 
@@ -190,7 +190,7 @@ BRC 6钱包采用了以 scrypt 为核心算法的相关技术作为钱包的加�
 
 2. 验证解码后数据长度为 39，以及前 3 个字节（data[0-2]是否为0x01、0x42、0xe0）
 
-3. 取data[3-6]作为`addresshash`
+3. 取 data[3-6] 作为`addresshash`
 
 4. 把密码、addresshash 代入 Scrypt 算法，指定结果长度为 64，求出`derivedkey`
 
@@ -212,7 +212,7 @@ BRC 6钱包采用了以 scrypt 为核心算法的相关技术作为钱包的加�
 | 生成私钥       | 推荐使用安全的随机数发生器                                 |
 | 导入私钥       | 从WIF字符串或者数字证书导入私钥到钱包中                    |
 | 导出私钥       | 导出账户的私钥                                             |
-| 生成公钥       | 使用ECC算法从私钥得到公钥                                  |
+| 生成公钥       | 使用 ECC 算法从私钥得到公钥                                |
 | 生成地址       | 从私钥生成地址                                             |
 | 导入地址       | 添加新的地址到钱包中                                       |
 | 导出地址       | 导出账户地址                                               |
@@ -221,7 +221,7 @@ BRC 6钱包采用了以 scrypt 为核心算法的相关技术作为钱包的加�
 | 同步区块数据   |                                                            |
 | 转账           | 转账资产到其他地址                                         |
 | 签名           | 对数据签名，比如交易                                       |
-| 提取gas        | 提取通过持有neo新分配的gas                                 |
+| 提取gas        | 提取通过持有 BHP 新分配的 Gas                              |
 | 获取余额       | 显示该钱包中所有账户的资产余额                             |
 | 获取交易       | 显示该钱包中产生的交易历史                                 |
 | 构造多签合约   | 构造多签合约                                               |

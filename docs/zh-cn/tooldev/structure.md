@@ -4,7 +4,7 @@ BHP 是一个基于点对点网络的区块链系统。它提供基于 UTXO 模�
 
 ### BHP-CLI 命令行
 
-BHP-CLI 是一个命令行程序。通过命令行控制台提供与区块链交互的基本功能。
+BHP-CLI 是一个命令行程序。通过命令行控制台提供与区块链交互的基本功能。更多信息，请参考 [BHP-CLI 命令行 ](../node/cli/cli.md)。
 
 ### 账本 API
 
@@ -24,7 +24,7 @@ BHP 官方提供两种格式的钱包，一种是 sqlite 数据库格式的钱�
 
 ### RpcServer
 
-一个向外提供RPC调用接口的模块。
+一个向外提供RPC调用接口的模块。关于 RPC 接口的细节，请参考 [RPC API](../reference/rpc/api.md) 。
 
 ### ConsensusService
 
@@ -168,7 +168,7 @@ protocol.mainnet.json 和 protocol.testnet.json 是两个备份文件，分别�
 
 > [!NOTE]
 > 
-> - BHP-CLI运行过程中如果异常终止，那么会将错误内容写入文件error.log，方便查看错误原因。
+> - BHP-CLI运行过程中如果异常终止，那么会将错误内容写入文件 error.log，方便查看错误原因。
 
 ## 启动的基本过程
 
@@ -221,4 +221,4 @@ protocol.mainnet.json 和 protocol.testnet.json 是两个备份文件，分别�
 
 ### 其他的初始化过程
 
-初始化所有的插件。
+初始化所有的插件。关于插件的种类，请参考 [安装插件 ](../node/cli/setup.md)。
