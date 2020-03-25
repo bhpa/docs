@@ -9,7 +9,7 @@
 ## 语法
 
 ```c#
-public static extern Neo.SmartContract.Framework.Services.Neo.Validator Register(byte[] pubkey)
+public static extern Bhp.SmartContract.Framework.Services.Bhp.Validator Register(byte[] pubkey)
 ```
 
 参数：
