@@ -4,7 +4,7 @@
 
 ```c#
 //创建钱包
-var wallet = new new BRC6Wallet(new WalletIndexer("Index_038263E2"), "wallet.json"); //钱包索引和文件名
+var wallet = new BRC6Wallet(new WalletIndexer("Index_038263E2"), "wallet.json"); //钱包索引和文件名
 wallet.Unlock("password"); //设置钱包密码
 wallet.CreateAccount();
 wallet.Save();
@@ -21,7 +21,7 @@ foreach (var item in accounts)
 ### 打开钱包文件
 
 ```c#
-var wallet = new new BRC6Wallet(new WalletIndexer("Index_038263E2"), "wallet.json"); //钱包索引和文件名
+var wallet = new BRC6Wallet(new WalletIndexer("Index_038263E2"), "wallet.json"); //钱包索引和文件名
 try
 {
     wallet.Unlock("password"); //钱包密码

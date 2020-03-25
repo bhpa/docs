@@ -69,7 +69,7 @@ var inputs = new List<CoinReference> {
 var outputs = new List<TransactionOutput>{ new TransactionOutput()
 {
     AssetId = Blockchain.UtilityToken.Hash,
-    ScriptHash = "ATe3wDE9MPQXZuvhgPREdQNYkiCBF7JShY".ToScriptHash(),
+    ScriptHash = "ARwMufsDMXFDvtCH9cpjxUHD1pBsZvRkJy".ToScriptHash(),
     Value = new Fixed8((long)(0.00002616 * (long)Math.Pow(10, 8)))
 }}.ToArray();
 

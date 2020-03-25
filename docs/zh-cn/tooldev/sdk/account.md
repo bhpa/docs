@@ -5,7 +5,7 @@
 ```c#
 try
 {
-    "AXfgAN3coFD1LXbAyCnnMS8LmmSNVrJCt9".ToScriptHash();
+    "ARwMufsDMXFDvtCH9cpjxUHD1pBsZvRkJy".ToScriptHash();
     Console.WriteLine("BHP地址正确");
 }
 catch (Exception)
@@ -21,7 +21,7 @@ catch (Exception)
 ```c#
 try
 {
-    Bhp.Wallets.Wallet.GetPrivateKeyFromWIF("6PYTDmusDiSixF9jynpJoFeCtexdy1L2Qfx2Y3umaSatdHHxzRnhgUv3dT");
+    Bhp.Wallets.Wallet.GetPrivateKeyFromWIF("KxHBVC6m1MZBPw1H9TTpwN9JjSan64in7ugnTTHfGCgAwBfZNypC");
     Console.WriteLine("私钥正确");
 }
 catch (Exception)
@@ -51,7 +51,7 @@ using (CngKey key = CngKey.Create(CngAlgorithm.ECDsaP256, null, new CngKeyCreati
 public void Generate(byte[] privateKey)
 {
     var account = new Bhp.Wallets.KeyPair(privateKey);
-    var sc = Neo.SmartContract.Contract.CreateSignatureContract(account.PublicKey);
+    var sc = Bhp.SmartContract.Contract.CreateSignatureContract(account.PublicKey);
     Console.WriteLine($"创建成功，标准地址为：{sc.Address}");
     Console.WriteLine($"创建成功，WIF私钥为：{account.Export()}");
 }

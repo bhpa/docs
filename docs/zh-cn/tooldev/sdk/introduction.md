@@ -1,8 +1,6 @@
 # 关于BHP SDK
 
-可使用 BHP SDK 来开发各种基于 BHP 的应用，如钱包客户端，游戏等。 引用 BHP SDK 后，您的项目仍可在原有的环境中运行，而非在BhpVM中运行，如果想开发在 BhpVM中运行的程序，请参考 BHP 智能合约。 
-
-此文档是完全开源的。可通过任何方式参与此文档，如创建问题、编写文档等。 
+可使用 BHP SDK 来开发各种基于 BHP 的应用，如钱包客户端，游戏等。 引用 BHP SDK 后，您的项目仍可在原有的环境中运行，而非在BhpVM中运行，如果想开发在 BhpVM中运行的程序，请参考 [BHP 智能合约](../../smartcontract/start/introduction.md)。
 
 ## 项目构成
 
@@ -10,7 +8,7 @@
 
 **BHP SDK主要项目：**
 
-BHP：https://github.com/BhpAlpha/cli
+BHP：https://github.com/BhpAlpha/bhp-cli
 
 BhpVM：https://github.com/BhpAlpha/bhp-vm
 

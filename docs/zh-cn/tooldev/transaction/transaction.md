@@ -87,14 +87,12 @@ BHP 中一共定义了 9 种不同类型的交易，如下表所示。
 | 编号 | 类型名 | 值  | 系统费用(GAS) |  描述  |
 |------|--------|-----|----------|----------|
 |  1  | MinerTransaction | 0x00 | 0 | 块的第一条交易，用于分配字节费的交易 |
-|  2  | RegisterTransaction | 0x40 | 10000/0 | （已弃用）注册资产，仅用于NEO和GAS |
+|  2  | RegisterTransaction | 0x40 | 10000/0 | （已弃用）注册资产，仅用于 BHP 和 GAS |
 |  3  | IssueTransaction | 0x01 | 500/0 |分发资产|
 |  4  | ClaimTransaction | 0x02 | 0 | 提取GAS |
 |  5  | StateTransaction | 0x90 | 1000/0 |申请见证人或共识节点投票|
-|  6  | EnrollmentTransaction | 0x20 | 1000 | (已弃用) 报名成为共识候选人 |
-|  7  | ContractTransaction | 0x80 | 0 | 合约交易，这是最常用的一种交易 |
-|  8  | PublishTransaction | 0xd0 | 500\*n | (已弃用) 智能合约发布 |
-|  9  | InvocationTransaction | 0xd1 | 具体的指令GAS消耗 | 调用合约，部署合约后或生成新资产之后会使用 |
+|  6  | ContractTransaction | 0x80 | 0 | 合约交易，这是最常用的一种交易 |
+|  7  | InvocationTransaction | 0xd1 | 具体的指令GAS消耗 | 调用合约，部署合约后或生成新资产之后会使用 |
 
 关于详细的交易处理流程，请参见 [交易流程](execution.md)。
 

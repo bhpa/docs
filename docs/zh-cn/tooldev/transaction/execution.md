@@ -8,7 +8,9 @@ BHP 中的交易，也是采用类似比特币交易的设计，每一笔交易�
 
 一笔交易，在 BHP-CLI、BHP-GUI 或通过 RPC 请求被创建，经钱包签名，构建出完整的交易数据，并通过节点进行验证和全网广播。
 
-共识节点收到该笔交易后，校验并放入到内存池。在某次共识阶段，议长打包该交易到新块中。最后，伴随着新块的全网广播，该交易被全网节点执行处理。
+共识节点收到该笔交易后，校验并放入到内存池。在某次共识阶段，议长打包该交易到新块中。最后，伴随着新块的全网广播，该交易被全网节点执行处理。整个流程可以简化成下图：
+
+![execution](../../assets/execution.png)
 
 1. 交易构建： 用户发起一笔交易
 
@@ -48,7 +50,7 @@ BHP 中的交易，也是采用类似比特币交易的设计，每一笔交易�
 
 3. 通过 BHP-GUI 界面
 
-  具体操作请参考交易。
+  具体操作请参考[交易](../../node/gui/transc.md)。
 
 钱包构建完整交易接口定义：
 
@@ -66,7 +68,7 @@ public Transaction MakeTransaction(List<TransactionAttribute> attributes, IEnume
 
 **钱包生成完整交易步骤**：
 
-1. 若包含非全局资产，涉及 BRC20 资产转账时，转成`InvocationTransaction`调用合约`transfer`方法进行NEP-5资产的转账。
+1. 若包含非全局资产，涉及 BRC20 资产转账时，转成`InvocationTransaction`调用合约`transfer`方法进行 BRC20 资产的转账。
 
 2. 计算总的 GAS 消耗，包括手续费 和 用户支付的网络费
 
@@ -84,7 +86,7 @@ public Transaction MakeTransaction(List<TransactionAttribute> attributes, IEnume
 
 ### 签名验证
 
-在前面的章节提到，一个账户地址，实际上代表的就是一段`OpCode.CHECKSIG`或者`OpCode.CHECKMULTISIG`合约代码，执行时需要提供签名参数。经典的 UTXO 交易转账时，实际上是对输入地址脚本执行解锁，执行成功则表示对交易的输入引用成功。在NEO交易验证时，也需要对涉及的脚本进行执行验证，故在执行前，需提供相应的脚本所需参数，如交易签名参数。这些参数与对应的脚本，最终被封装在交易的见证人(Witness)列表中。
+在前面的章节提到，一个账户地址，实际上代表的就是一段`OpCode.CHECKSIG`或者`OpCode.CHECKMULTISIG`合约代码，执行时需要提供签名参数。经典的 UTXO 交易转账时，实际上是对输入地址脚本执行解锁，执行成功则表示对交易的输入引用成功。在 BHP 交易验证时，也需要对涉及的脚本进行执行验证，故在执行前，需提供相应的脚本所需参数，如交易签名参数。这些参数与对应的脚本，最终被封装在交易的见证人(Witness)列表中。
 
 交易签名，实际上是添加地址脚本的签名参数，构建完整可执行的见证人(Witness)，其签名步骤如下：
 
@@ -176,6 +178,8 @@ public Transaction MakeTransaction(List<TransactionAttribute> attributes, IEnume
 ### 广播推送
 
 钱包所在节点，将进行P2P广播该交易。
+
+![execution2](../../assets/execution2.png)
 
 **广播步骤**：
 
@@ -308,7 +312,7 @@ TransactionAttributeUsage，表示交易属性用途，数据结构如下：
 | 尺寸 | 字段 | 名称  | 类型 | 描述 |
 |----|-----|-------|------|------|
 |  -  | - | - | -  | 	交易的公共字段  |
-| 4 | Nonce | 交易nonce | uint | 创世区块的 Nonce 的值与比特币的创世区块相同，<br/>为2083236893，其他情况下为随机数值。 |
+| 4 | Nonce | 交易nonce | uint | 创世区块的 Nonce 的值与比特币的创世区块相同，为2083236893，其他情况下为随机数值。 |
 |  -  | - | - | -  | 	交易的公共字段  |
 
 分配字节费的特殊交易, 非用户创建类型的交易。系统在创世块创建了第一个 MinerTransaction，此后在创建新块的时候，由议长创建相应的 MinerTransaction，将所有交易的网络费作为出块奖励。
@@ -377,7 +381,7 @@ Amount为发行总量，共有2种模式：
 | 尺寸 | 字段 | 名称  | 类型 | 描述 |
 |----|-----|-------|------|------|
 |  -  | - | - | -  | 	交易的公共字段  |
-| 34\*? | Claims | Claim已花费的交易 | CoinReference[] | 已经花费的含有NEO的交易输出，获取能够分红的Gas |
+| 34\*? | Claims | Claim已花费的交易 | CoinReference[] | 已经花费的含有 BHP 的交易输出，获取能够分红的 Gas |
 |  -  | - | - | -  | 	交易的公共字段  |
 
 GAS 是由持有 BHP 用户进行 Claim 操作，进行增发 GAS（并非每出一个块就立马奖励Gas到账户上）。用户能够 Claim 到的 GAS 是与 BHP 资产的起始高度，截止高度，紧密相关。GAS 总量上限是1亿，当区块高度到达 4600W 后，每个区块不再有奖励。
@@ -452,16 +456,6 @@ GAS 是由持有 BHP 用户进行 Claim 操作，进行增发 GAS（并非每出
 
 其他处理流程，与一般流程一致。
 
-### EnrollmentTransaction (已弃用)
-
-| 尺寸 | 字段 | 名称  | 类型 | 描述 |
-|----|-----|-------|------|------|
-|  -  | - | - | -  | 	交易的公共字段  |
-| ? | PublicKey | 记账人的公钥 | ECPoint | 用于分配的 BHP |
-|  -  | - | - | -  | 	交易的公共字段  |
-
-报名成为验证人的特殊交易，具体操作请参阅选举与投票。
-
 ### StateTransaction
 
 | 尺寸 | 字段 | 名称  | 类型 | 描述 |
@@ -484,24 +478,6 @@ GAS 是由持有 BHP 用户进行 Claim 操作，进行增发 GAS（并非每出
 ### ContractTransaction
 
 合约交易，最常用的一种交易，用于转账交易（BHP-CLI, API 的 send 指令，以及 GUI 的 send 操作），处理流程与一般流程一致。
-
-### PublishTransaction (已弃用)
-
-| 尺寸 | 字段 | 名称  | 类型 | 描述 |
-|----|-----|-------|------|------|
-|  -  | - | - | -  | 	交易的公共字段  |
-| ? | Script | 合约的脚本 | byte[] |  |
-| ? | ParameterList | 参数类型列表 | ContractParameterType |  |
-| 1 | ReturnType | 返回类型 | ContractParameterType |  |
-| 1 | NeedStorage | 是否需要存储空间 | bool |  |
-| ? | Name | 合约名称 | string |  |
-| ? | CodeVersion | 合约版本编号 | string |  |
-| ? | Author | 合约作者姓名 | string |  |
-| ? | Email | 电子邮箱 | string |  |
-| ? | Description | 合约描述 | string |  |
-|  -  | - | - | -  | 	交易的公共字段  |
-
-智能合约发布的特殊交易，处理流程与一般流程一致。注意, 用户在 GUI 发布智能合约时，实际调用的是 InvocationTransaction。
 
 ### InvocationTransaction
 
