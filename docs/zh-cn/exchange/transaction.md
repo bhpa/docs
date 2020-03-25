@@ -35,7 +35,7 @@ BHP 中主要有两种资产，一种是全局资产，例如：BHP、GAS 等，
 
 #### 交易所查询用户地址余额 
 
-要查询用户地址全局资产余额，交易所需要调用 `getaccountstate` API 获取用户地址余额。
+要查询用户地址全局资产余额，交易所需要调用 [getaccountstate](../reference/rpc/api/getaccountstate.md) API 获取用户地址余额。
 
 ##### getaccountstate
 
@@ -102,7 +102,7 @@ Height: 99/99/99, Nodes: 10
 
 交易所需要写代码监控每个区块的每个交易，在数据库中记录下所有充值提现交易。如果有充值交易就要修改数据库中的用户余额。
 
-BHP-CLI API 中的 `getblock < index> [verbose]` 方法提供了获取区块信息的功能，该方法中的 < index> 为区块索引。[verbose] 默认值为 0，表示返回的是区块序列化后的信息，用 16 进制字符串表示，如果从中获取详细信息需要反序列化。[verbose] 为 1 时返回的是对应区块的详细信息，用 Json 格式字符串表示。更多信息请参阅 `getblock` 方法 。
+BHP-CLI API 中的 `getblock < index> [verbose]` 方法提供了获取区块信息的功能，该方法中的 < index> 为区块索引。[verbose] 默认值为 0，表示返回的是区块序列化后的信息，用 16 进制字符串表示，如果从中获取详细信息需要反序列化。[verbose] 为 1 时返回的是对应区块的详细信息，用 Json 格式字符串表示。更多信息请参阅 [getblock](../reference/rpc/api/getblock2.md) 方法 。
 
 BHP-CLI API 中的 `listsinceblock <start_height> [target_confirmations]` 方法提供了获取钱包相关交易信息的功能，该方法中的 <start_height> 为开始查询交易的区块高度（包含该高度），[target_confirmations] 默认值为6，表示目标确认数。更多信息请参阅 `listsinceblock`方法。
 
@@ -125,7 +125,7 @@ BHP-CLI API 中的 `listsinceblock <start_height> [target_confirmations]` 方法
 
 3. （可选）客服处理提现申请。
 
-4. 使用 BHP-CLI API 中的 `sendtoaddress <asset_id> <address> <value> [fee=0] [change_address] `方法 ，向用户提现地址发送交易。更多信息，请参阅 `sendtoaddress` 方法 。
+4. 使用 BHP-CLI API 中的 `sendtoaddress <asset_id> <address> <value> [fee=0] [change_address] `方法 ，向用户提现地址发送交易。更多信息，请参阅 [sendtoaddress](../reference/rpc/api/sendtoaddress.md) 方法 。
 
    - asset_id：资产 ID（资产标识符），即该资产在注册时的 RegistTransaction 的交易 ID。其余资产 ID 可以通过 CLI 命令 中的 list asset 命令查询，也可以在区块链浏览器中查询。
 
@@ -134,7 +134,7 @@ BHP-CLI API 中的 `listsinceblock <start_height> [target_confirmations]` 方法
    - fee：手续费，可选参数，默认为 0。
    - change_address ：找零地址，可选参数，默认为钱包中第一个标准地址。
 
-   要向多个地址批量发送交易，可以使用 API `sendmany` 方法 。
+   要向多个地址批量发送交易，可以使用 API [sendmany](../reference/rpc/api/sendmany.md) 方法 。
 
 5. 从返回的 Json 格式交易详情中提取交易 ID，记录在数据库中。
 
@@ -184,7 +184,7 @@ BHP-CLI API 中的 `listsinceblock <start_height> [target_confirmations]` 方法
 
 **script hash**
 
-要查询的 BRC-6 币的散列值，例如，BCNY 的散列值是：0x8226c513e2aa717f2f32d3c5fb2bcb492acfc3dc
+要查询的 BRC-20 币的散列值，例如，BCNY 的散列值是：0x8226c513e2aa717f2f32d3c5fb2bcb492acfc3dc
 
 **method name**
 
@@ -208,7 +208,7 @@ symbol
 
 - optional arguments
 
-  可选。如果调用的方法需要参数，可以将这些参数构造成一个数组传入。例如，BRC-6 的 "balanceOf" 返回 "account" 的余额：
+  可选。如果调用的方法需要参数，可以将这些参数构造成一个数组传入。例如，BRC-20 的 "balanceOf" 返回 "account" 的余额：
 
   `public static BigInteger balanceOf(byte[] account)`
 
@@ -359,17 +359,17 @@ symbol
 
 ### 充值 
 
-对交易所来说，捕获 BRC-6 类资产的充值交易，其方法与全局资产非常类似。
+对交易所来说，捕获 BRC-20 类资产的充值交易，其方法与全局资产非常类似。
 
 1. 通过 getblock api 获取每个区块的详情，其中便包括该区块中所有交易的详情；
-2. 分析每笔交易的交易类型，过滤出所有类型为 "InvocationTransaction" 的交易，任何非 "InvocationTransaction" 类型的交易都不可能成为 BRC-6 类型资产的转账交易； 
+2. 分析每笔交易的交易类型，过滤出所有类型为 "InvocationTransaction" 的交易，任何非 "InvocationTransaction" 类型的交易都不可能成为 BRC-20 类型资产的转账交易； 
 3. 调用 getapplicationlog api 获取每笔 "InvocationTransaction" 交易的详情，分析交易内容完成用户充值。
 
 #### 调用 getapplicationlog
 
-使用 `getapplicationlog` 这个 API 来获取交易信息。
+使用 [getapplicationlog](../reference/rpc/api/getapplicationlog.md) 这个 API 来获取交易信息。
 
-可以看到在根目录下生成了一个 ApplicationLogs 文件夹，完整的合约日志会记录到该目录下，每笔 BRC-6 交易会记录在 leveldb 文件中，通过 API 来读取。
+可以看到在根目录下生成了一个 ApplicationLogs 文件夹，完整的合约日志会记录到该目录下，每笔 BRC-20 交易会记录在 leveldb 文件中，通过 API 来读取。
 
 以下是一个 API 调用结果：
 
@@ -423,16 +423,16 @@ symbol
 }
 ```
 
-> - 失败的 BRC-6 交易也会上链，因此需要判断虚拟机的状态项 "vmstate" 是否正确。
+> - 失败的 BRC-20 交易也会上链，因此需要判断虚拟机的状态项 "vmstate" 是否正确。
 > - "vmstate" 是虚拟机执行合约后的状态，如果包含 "FAULT" 的话，说明执行失败，那么该交易便是无效的。
 
-- contract : 该字符串为智能合约的脚本哈希，对于交易所来说，这里是相应 BRC-6 类型资产的脚本哈希，交易所可以以此来确定资产的唯一性。例如，"0xb9d7ea3062e6aeeb3e8ad9548220c4ba1361d263" 就是 BCNY 资产的脚本哈希，是该资产在全网的唯一标识。
+- contract : 该字符串为智能合约的脚本哈希，对于交易所来说，这里是相应 BRC-20 类型资产的脚本哈希，交易所可以以此来确定资产的唯一性。例如，"0xb9d7ea3062e6aeeb3e8ad9548220c4ba1361d263" 就是 BCNY 资产的脚本哈希，是该资产在全网的唯一标识。
 
 - 对于转账交易，"state" 中 "value" 对应的数组包含以下四个对象：
 
   [事件，转出账户，转入账户，金额]
 
-- 数组中的第一个对象，类型为 bytearray，值为 "7472616e73666572"，经过转换，为字符串 "transfer"。transfer 是 BRC-6 中的一个方法，代表资产转账。 `json { "type": "ByteArray", "value": "7472616e73666572" } `
+- 数组中的第一个对象，类型为 bytearray，值为 "7472616e73666572"，经过转换，为字符串 "transfer"。transfer 是 BRC-20 中的一个方法，代表资产转账。 `json { "type": "ByteArray", "value": "7472616e73666572" } `
 
 - 数组中的的第二个对象，为转出账户地址，类型为 bytearray，值为 "e3069da508f128069a0cd2544b0728ccbacdfb43"，经过转换，为字符串 "AcUGxiaPjCiD74VWiFqPzudJHZo4QMza5Q"。
 
@@ -450,7 +450,7 @@ symbol
 
 ### 提现 
 
-交易所可以通过以下一种方式发送 BRC-6 资产给用户，客户端侧必须打开钱包才能使用以下 API：
+交易所可以通过以下一种方式发送 BRC-20 资产给用户，客户端侧必须打开钱包才能使用以下 API：
 
 - bhp-cli 命令： send
 - RPC 方法： sendfrom

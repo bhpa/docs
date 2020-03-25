@@ -39,7 +39,7 @@ BHP-CLI 提供以下功能：
   help 
   ```
 
-  更多信息，请参阅 [CLI 命令参考 ](https://github.com/BhpAlpha/docs/tree/master/rpc)。
+  更多信息，请参阅 [CLI 命令参考 ](../node/cli/cli.md)。
 
 - 提供一系列 API 接口，用于从节点获取区块链数据。接口通过 [JSON-RPC](http://www.jsonrpc.org/specification) 的方式提供，底层使用 HTTP/HTTPS 协议进行通讯。
 
@@ -49,9 +49,9 @@ BHP-CLI 提供以下功能：
   dotnet bhp-cli.dll --rpc 
   ```
 
-  要查看更多 API 信息，请参阅 [API 参考 ](https://github.com/BhpAlpha/docs/tree/master/rpc)。
+  要查看更多 API 信息，请参阅 [API 参考 ](../reference/rpc/api.md)。
 
-- 提供BRC-20 资产的交易信息。
+- 提供BRC20 资产的交易信息。
 
 - 功能列表
 
@@ -74,7 +74,7 @@ BHP-CLI 提供以下功能：
 
 1. 输入命令 `create wallet <path>` 。
 
-   其中 <path> 为钱包路径及名称，扩展名根据所使用的钱包种类来设定，可以是 .db3 也可以是 .json（如无扩展名，则钱包格式为BRC6 钱包）。如 create wallet /home/mywallet.db3。
+   其中 <path> 为钱包路径及名称，扩展名根据所使用的钱包种类来设定，可以是 .db3 也可以是 .json（如无扩展名，则钱包格式为 BRC6 钱包）。如 create wallet /home/mywallet.db3。
 
 2. 设置钱包密码。
 

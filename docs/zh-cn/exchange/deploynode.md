@@ -98,3 +98,4 @@
 | 协议配置文件protocol.json | protocol.mainnet.json | protocol.testnet.json                         |
 | 区块链浏览器              | https://exp.bhpa.io   | https://texp.bhpa.io (https://47.103.46.191/) |
 
+更多详细内容，请参阅 [BHP 节点的安装部署 ](../node/cli/setup.md)。

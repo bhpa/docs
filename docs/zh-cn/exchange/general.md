@@ -6,10 +6,10 @@ BHP 算力公链中的全局资产是 BHP，使用 UTXO 模型来管理资产。
 
 一般来说，交易所对接需要完成以下操作：
 
-- 在服务器中部署 BHP 节点
-- 使用 bhp-cli 客户端
-- 处理资产交易
-- 给用户分发 GAS
+- [在服务器中部署 BHP 节点](deploynode.md)
+- [使用 bhp-cli 客户端](client.md)
+- [处理资产交易](transaction.md)
+- [给用户分发 GAS](gas.md)
 
 后文将进行详细描述。
 

@@ -10,7 +10,7 @@ BHPGAS（缩写符号 GAS）共 1 亿份，代表了 BHP 区块链的使用权�
 
 ## 计算可提取的 GAS 总量 
 
-- 可提取的 *GAS = f(neoamount, Δtconst)*
+- 可提取的 *GAS = f(bhpamount, Δtconst)*
 
   - Δt*const = t*end - t_start
   - t_end =BHP 变为 spent 状态时刻
@@ -18,7 +18,7 @@ BHPGAS（缩写符号 GAS）共 1 亿份，代表了 BHP 区块链的使用权�
 
   由于 Δt 是定量，所以可提取的 GAS 也是一个定量。可提取 GAS 的大小取决于所持有的 BHP 数量以及两个状态的时间差。
 
-- 不可提取的 *GAS = f(neoamount, Δtvar)*
+- 不可提取的 *GAS = f(bhpamount, Δtvar)*
 
   - Δt*var = t - t*start
   - t 为当前时刻
@@ -38,10 +38,10 @@ BHPGAS（缩写符号 GAS）共 1 亿份，代表了 BHP 区块链的使用权�
 
 以下 RPC 方法可以帮助交易所查询用户 GAS 信息。要查看调用的 JSON 文件示例，点击表格中的链接。
 
-| 方法     | 描述                                 | 参数 |
-| -------- | ------------------------------------ | ---- |
-| showgas  | 返回本钱包所有可用和不可用的GAS      |      |
-| claimgas | 提取钱包中的 GAS到钱包第一个标准地址 |      |
+| 方法                                         | 描述                                 | 参数 |
+| -------------------------------------------- | ------------------------------------ | ---- |
+| [showgas](../reference/rpc/api/showgas.md)   | 返回本钱包所有可用和不可用的GAS      |      |
+| [claimgas](../reference/rpc/api/claimgas.md) | 提取钱包中的 GAS到钱包第一个标准地址 |      |
 
 ## 用户提取 GAS
 
