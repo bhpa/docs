@@ -4,15 +4,15 @@
 
 BhpVM内置的数据类型一共有7种：
 
-| 类型             | 描述                                                                                           |
-| ---------------- | ---------------------------------------------------------------------------------------------- |
-| Boolean          | 布尔类型，实现为一个bool值和两个字节数组`TRUE`和`FALSE`。                                          |
-| Integer          | 整型，实现为一个`BigInteger`值。                                                                 |
-| ByteArray        | 字节数组，实现为一个`byte[]`。                                                                   |
-| Array            | 数组，实现为一个`List<StackItem>`，`StackItem`是一个抽象类，NeoVM内置的数据类型均继承自`StackItem`。 |
-| Struct           | 结构体，继承自`Array`。结构与`Array`相同，只是添加了`Clone`方法和重写了`Equals`方法。                  |
-| Map              | 实现为一个键值对为`StackItem`的字典类型`Dictionary<StackItem, StackItem>`。                       |
-| InteropInterface | 互操作接口                                                                                     |
+| 类型             | 描述                                                         |
+| ---------------- | ------------------------------------------------------------ |
+| Boolean          | 布尔类型，实现为一个 bool 值和两个字节数组`TRUE`和`FALSE`。  |
+| Integer          | 整型，实现为一个`BigInteger`值。                             |
+| ByteArray        | 字节数组，实现为一个`byte[]`。                               |
+| Array            | 数组，实现为一个`List<StackItem>`，`StackItem`是一个抽象类，BhpVM内置的数据类型均继承自`StackItem`。 |
+| Struct           | 结构体，继承自`Array`。结构与`Array`相同，只是添加了`Clone`方法和重写了`Equals`方法。 |
+| Map              | 实现为一个键值对为`StackItem`的字典类型`Dictionary<StackItem, StackItem>`。 |
+| InteropInterface | 互操作接口                                                   |
 
 ```c#
 // boolean 类型
@@ -24,7 +24,7 @@ private bool value;
 
 ## 指令集
 
-Neo.VM虚拟机一共实现了113个指令（另外有4个被注释未实现指令），类别如下：
+BhpVM虚拟机一共实现了113个指令（另外有4个被注释未实现指令），类别如下：
 
 | 常数 | 流程控制 | 栈操作 | 字符串操作 | 逻辑运算 | 算术运算 | 密码学 | 高级数据结构 |栈隔离| 异常处理 |
 | ---- | -------- | ------ | ------ | -------- | -------- | ------ | -------- | ------ | ---- |

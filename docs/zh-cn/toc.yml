@@ -41,7 +41,7 @@
   - name: 主网与测试网
     href: /docs/zh-cn/network/network.md
   - name: 搭建私有链
-    href: /docs/zh-cn/network/private-chain.md
+    href: /docs/zh-cn/network/privateChain.md
 - name: 智能合约开发
   items:
   - name: 快速入门（C#）
@@ -314,6 +314,6 @@
           href: /docs/zh-cn/reference/scapi/frame/dotnet/bhp.md
         - name: System 命名空间
           href: /docs/zh-cn/reference/scapi/frame/dotnet/system.md
-  - name: BHP-VM指定集
+  - name: BHP-VM 指令集
     href: /docs/zh-cn/reference/vm.md
     
