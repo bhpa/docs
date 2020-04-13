@@ -1,8 +1,8 @@
 # API 参考
 
-> 新增：
+> 修改
 >
-> - getcontractopcode
+> - invoke、invokefunction、invokescript
 
 每个 BHP-CLI 节点都可选的提供了一套 API 接口，用于从节点获取区块链数据，使得开发区块链应用变得十分方便。接口通过 JSON-RPC 的方式提供，底层使用 HTTP/HTTPS 协议进行通讯。要启动一个提供 RPC 服务的节点，可运行以下命令：
 
@@ -123,9 +123,9 @@ JSON-RPC 服务器启动后，会监听 TCP 端口，默认端口如下。
 | [getvalidators](api/getvalidators.md)                   |                                                              |                                                      |                             |
 | [getversion](api/getversion.md)                         |                                                              | 获取查询节点的版本信息                               |                             |
 | [getwalletheight](api/getwalletheight.md)               |                                                              | 获取当前钱包索引高度                                 | 需要打开钱包                |
-| [invoke](api/invoke.md)                                 | <script_hash>\<params>                                       | 使用给定的参数以散列值调用智能合约                   |                             |
-| [invokefunction](api/invokefunction.md)                 | <script_hash>\<operation>\<params>                           | 以指定的脚本散列值调用智能合约，传入操作及参数       |                             |
-| [invokescript](api/invokescript.md)                     | \<script>                                                    | 通过虚拟机运行脚本并返回结果                         |                             |
+| [invoke](api/invoke.md)                                 | <script_hash>\<params>[checkWitnessHash]                     | 使用给定的参数以散列值调用智能合约                   |                             |
+| [invokefunction](api/invokefunction.md)                 | <script_hash>\<operation>\<params>[checkWitnessHash]         | 以指定的脚本散列值调用智能合约，传入操作及参数       |                             |
+| [invokescript](api/invokescript.md)                     | \<script>[checkWitnessHash]                                  | 通过虚拟机运行脚本并返回结果                         |                             |
 | [listaddress](api/listaddress.md)                       |                                                              | 列出当前钱包内的所有地址                             | 需要打开钱包                |
 | [listsinceblock](api/listsinceblock.md)                 | <start_height>[target_confirmations]                         | 根据参数返回与钱包相关的所有交易                     | 需要打开钱包                |
 | [sendfrom](api/sendfrom.md)                             | <asset_id>\<from>\<to>\<value>[fee=0]\[change_address]\[remark][fee_address] | 从指定地址，向指定地址转账                           | 需要打开钱包                |
