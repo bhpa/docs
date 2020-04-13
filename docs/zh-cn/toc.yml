@@ -196,6 +196,8 @@
         href: /docs/zh-cn/reference/rpc/api/getcontractopcode.md
       - name: getcontractstate
         href: /docs/zh-cn/reference/rpc/api/getcontractstate.md
+      - name: getdeposits
+        href: /docs/zh-cn/reference/rpc/api/getdeposits.md
       - name: getnewaddress
         href: /docs/zh-cn/reference/rpc/api/getnewaddress.md
       - name: getpeers
