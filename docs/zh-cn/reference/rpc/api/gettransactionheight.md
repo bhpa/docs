@@ -1,6 +1,6 @@
 # gettransactionheight方法
 
-获取交易高度
+获取交易高度。
 
 ## 参数说明
 

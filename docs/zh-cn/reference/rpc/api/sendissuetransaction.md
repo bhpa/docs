@@ -1,12 +1,14 @@
 # sendissuetransaction方法
 
-分发资产
+分发资产.
 
->  [!Note] 执行此命令前需要在 Bhp-CLI 节点中打开钱包。只有该资产注册时设置的资产发行人可发行该资产。
+>  [!Note]
+>
+>   执行此命令前需要在 BHP-CLI 节点中打开钱包。只有该资产注册时设置的资产发行人可发行该资产。
 
 ## 参数说明
 
-- asset_id：资产 ID（资产标识符），即该资产在注册时的 RegistTransaction 的交易 ID。其余资产 ID 可以通过 CLI 命令 中的 list asset 命令查询，也可以在区块链浏览器中查询。
+- asset_id：资产 ID（资产标识符），即该资产在注册时的交易 ID。其余资产 ID 可以通过 CLI 命令 中的 list asset 命令查询，也可以在区块链浏览器中查询。
 
 - <outputs_array>
 

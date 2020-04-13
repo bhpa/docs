@@ -4,7 +4,7 @@
 
 `dotnet bhp-cli.dll`
 
-本节将介绍命令行钱包的所有命令，你可以通过输入命令操作钱包，如创建打开钱包、导入导出私钥、转账、启动共识等。
+本节将介绍命令行钱包的所有命令，你可以通过输入命令的形式操作钱包，如创建打开钱包、导入导出私钥、转账、启动共识等。
 
 ## 命令概览
 
@@ -17,57 +17,61 @@
 - `|` ：表示所填的参数可以是其中任意一种
 - `=` ：表示可选参数在不输入情况下的默认值
 
-#### 控制台命令
+### 控制台指令
 
-| 命令               | 说明                                   |
-| :----------------- | -------------------------------------- |
+| 命令               | 功能说明                               |
+| ------------------ | -------------------------------------- |
 | version            | 显示当前软件的版本                     |
 | help [plugin-name] | 帮助菜单，也可以查看部分插件的提示信息 |
 | clear              | 清除屏幕                               |
 | exit               | 退出程序                               |
 
-#### 钱包命令
+### 钱包命令
 
-| 命令                                              | 参数                                           | 说明                                                         |
-| ------------------------------------------------- | ---------------------------------------------- | ------------------------------------------------------------ |
-| [create wallet](#create-wallet)                   | \<path>                                        | 创建钱包文件                                                 |
-| [open wallet](#open-wallet)                       | \<path>                                        | 打开钱包文件                                                 |
-| close wallet                                      |                                                | 关闭钱包文件                                                 |
-| [upgrade wallet](#upgrade-wallet)                 | \<path>                                        | 升级旧版钱包文件                                             |
-| [rebuild index](#rebuild-index)                   |                                                | 重建钱包索引。<br/>需要打开钱包。                            |
-| list address                                      |                                                | 列出钱包中的所有账户。<br>需要打开钱包。                     |
-| list asset                                        |                                                | 列出钱包中的所有资产。<br/>需要打开钱包。                    |
-| list key                                          |                                                | 列出钱包中的所有公钥。<br/>需要打开钱包。                    |
-| [show utxo](#show-utxo)                           | [id\|alias]                                    | 列出钱包中指定资产的 UTXO。<br/>需要打开钱包。               |
-| [show gas](#show-gas)                             |                                                | 列出钱包中的所有未提取的 GAS。<br/>需要打开钱包。            |
-| [claim gas](#claim-gas)                           | [all]                                          | 提取钱包中可提取状态的 GAS（前50个地址或所有地址）。<br/>需要打开钱包。 |
-| [create address](#create-address)                 | [n为正整数，不填默认为1]                       | 创建地址 / 批量创建地址。<br/>需要打开钱包。                 |
-| [import key](#import-key)                         | \<wif\|path>                                   | 导入私钥 / 批量导入私钥。<br/>需要打开钱包。                 |
-| [export key](#export-key)                         | \[address] [path]                              | 导出私钥。<br/>需要打开钱包。                                |
-| [send](#send)                                     | \<id\|alias> \<address> \<amount>\|all [fee=0] | 向指定地址转账。<br/>需要打开钱包。                          |
-| [import multisigaddress](#import-multisigaddress) | \<m pubkeys>                                   | 创建多方签名合约。<br/>需要打开钱包。                        |
-| [sign](#sign)                                     | \<jsonObjectToSign>                            | 对多方签名交易进行签名。<br/>需要打开钱包。                  |
+| 命令                                             | 参数                                       | 说明                                                         |
+| ------------------------------------------------ | ------------------------------------------ | ------------------------------------------------------------ |
+| [create wallet](#create wallet)                  | \<path>                                    | 创建钱包文件                                                 |
+| [open wallet](#open wallet)                      | \<path>                                    | 打开钱包文件                                                 |
+| close wallet                                     |                                            | 关闭钱包文件                                                 |
+| [upgrade wallet](#upgrade wallet)                | \<path>                                    | 升级旧版钱包文件                                             |
+| [rebuild index](#rebuild index)                  |                                            | 重建钱包索引。<br/>需要打开钱包。                            |
+| list address                                     |                                            | 列出钱包中的所有账户<br/>需要打开钱包。                      |
+| list asset                                       |                                            | 列出钱包中的所有资产<br/>需要打开钱包。                      |
+| list key                                         |                                            | 列出钱包中的所有公钥<br/>需要打开钱包。                      |
+| [show utxo](#show utxo)                          | [id\|alias]                                | 列出钱包中指定资产的 UTXO<br/>需要打开钱包。                 |
+| [show gas](#show gas)                            |                                            | 列出钱包中的所有可提取及不可提取的 GAS<br/>需要打开钱包。    |
+| [claim gas](#claim gas)                          | [all]\[changeAddress]                      | 提取钱包中可提取状态的 GAS（前50个地址或所有地址）<br/>需要打开钱包。 |
+| [create address](#create address)                | [n为正整数，不填默认为1]                   | 创建地址 / 批量创建地址<br/>需要打开钱包。                   |
+| [import key](#import key)                        | <wif\|path>                                | 导入私钥 / 批量导入私钥<br/>需要打开钱包。                   |
+| [export key](#export key)                        | [address]\[path]                           | 导出私钥<br/>需要打开钱包。                                  |
+| [export wallet](#export wallet)                  | \<path>                                    | 导出钱包信息<br/>需要打开钱包。                              |
+| [import multisigadress](#import multisigaddress) | <m pubkeys>                                | 创建多方签名合约<br/>需要打开钱包。                          |
+| [send](#send)                                    | <id\|alias>\<address>\<value>\|all [fee=0] | 向指定地址转账<br/>参数分别为：资产 ID，对方地址，转账金额，手续费<br/>需要打开钱包。 |
+| [sign](#sign)                                    | \<jsonObjectToSign>                        | 签名<br/>参数：记录交易内容的 json 字符串<br/>需要打开钱包。 |
 
-#### 节点命令
+### 节点命令
 
-| 命令            | 参数                | 说明                                           |
+| 命令            | 参数                | 功能说明                                       |
 | --------------- | ------------------- | ---------------------------------------------- |
 | show state      |                     | 显示当前区块链同步状态                         |
 | show pool       | [verbose]           | 显示内存池中的交易（这些交易处于零确认的状态） |
-| [relay](#relay) | \<jsonObjectToSign> | 将完成签名的交易信息进行广播。                 |
+| [relay](#relay) | \<jsonObjectToSign> | 广播<br/>参数：记录交易内容的 json 字符串      |
 
 #### 插件命令
 
-| 命令                    | 参数       | 说明         |
-| ----------------------- | ---------------- | ---------------- |
-| plugins |  | 显示已加载的插件 |
-| [export block[s]](#export-block-s-) | [path=chain.acc] | 导出全部区块数据，导出的结果可以用作离线同步|
-| [export block[s]](#export-block-s-) | \<start> [count] | 从指定区块高度导出指定数量的区块数据，导出的结果可以用作离线同步 |
+| 命令                | 参数             | 说明                                                         |
+| ------------------- | ---------------- | ------------------------------------------------------------ |
+| plugins             |                  | 显示已加载的插件                                             |
+| [install](#install) | [Plugin name]    | 安装指定插件                                                 |
+| uninstall           | [Plugin name]    | 卸载指定插件                                                 |
+| export block[s]     | [path=chain.acc] | 导出全部区块数据，导出的结果可以用作离线同步                 |
+| export block        | \<start> [count] | 从指定区块高度导出指定数量的区块数据，导出的结果可以用作离线同步 |
+
 #### 高级命令
 
-| 命令                                | 说明     |
-| ----------------------------------- | -------- |
-| [start consensus](#start-consensus) | 启动共识 |
+| 命令            | 说明     |
+| --------------- | -------- |
+| start consensus | 启动共识 |
 
 ## 命令说明
 
@@ -85,11 +89,11 @@
 bhp> create wallet test.json
 password: *
 password: *
-address: ATGBeteuYJsHwUVt6xMdxZMV9Y7BkV51yn
-pubkey: 0399e96a2970c83e26ad66de36a4bad0512a62defd447e3e26723fac73d4072ba1
+address: AcYUof1TBHUTMa1VKNKcBXSfK3NN8pXb49
+pubkey: 03286bddc438b209ec979cfdf5cbf801ff072905cc651aba3ef5592349747bea61
 ```
 
-创建的钱包文件存放在 Bhp-CLI 根目录下，如果要指定其它路径，需要先创建好文件夹。
+创建的钱包文件存放在 BHP-CLI 根目录下，如果要指定其它路径，需要先创建好文件夹。
 
 ### open wallet
 
@@ -117,13 +121,13 @@ password: *
 ##### 示例
 
 ```
-bhp> upgrade wallet test.db3
-Wallet file upgrade complete. New wallet file has been auto-saved at: test.json
+bhp>upgrade wallet cli.db3
+Wallet file upgrade complete. Old file has been auto-saved at: cli.old.db3
 ```
 
 ### rebuild index
 
-重建钱包索引，此操作将强制钱包从区块高度为0开始同步区块交易。新创建的钱包不用重建钱包索引，只有要导入私钥或者钱包中资产显示异常时才需要重建钱包索引。
+重建钱包索引，此操作将强制钱包从区块高度为 0 开始同步区块交易。新创建的钱包不用重建钱包索引，只有要导入私钥或者钱包中资产显示异常时才需要重建钱包索引。
 
 或者由于种种原因，钱包中的某笔交易未确认，这时资产已经从钱包中扣除，但并未经过整个区块链网络的确认。如果想删掉这笔未确认的交易使钱包中的资产正常显示也需要重建钱包索引。
 
@@ -138,15 +142,10 @@ Wallet file upgrade complete. New wallet file has been auto-saved at: test.json
 ##### 示例
 
 ```
-bhp>show utxo BHP
-8674c38082e59455cf35cee94a5a1f39f73b617b3093859aa199c756f7900f1f:2
-total: 1 UTXOs
-bhp>show utxo gas
-8674c38082e59455cf35cee94a5a1f39f73b617b3093859aa199c756f7900f1f:1
-total: 1 UTXOs
-bhp>show utxo 025d82f7b00a9ff1cfe709abe3c4741a105d067178e645bc3ebad9bc79af47d4
-8674c38082e59455cf35cee94a5a1f39f73b617b3093859aa199c756f7900f1f:0
-total: 1 UTXOs
+bhp> show utxo
+0x320066d51cd234a0acebbc93145a379105f45151d6380f3d15b6b8d9f9254d59:50
+0x0c6e5c6f925ebc2c3de88d993873c5a93a0fcd0b11f08baff8f3a725fde0a854:2
+total: 2 UTXOs
 ```
 
 ### show gas
@@ -160,14 +159,19 @@ total: 1 UTXOs
 ##### 示例
 
 ```
-bhp> show gas
-unavailable: 0
-available:0
+unavailable: 3.3
+  available: 2.1
 ```
 
-> [!NOTE]
->
-> 这里不包含已提取的 GAS，查看已提取的 GAS 请用 list asset 命令。
+其中 unavailable 表示不可提取的 GAS，available 表示可提取（待提取）的 GAS。
+
+- 注：这里不包含已提取的 GAS，查看已提取的 GAS 请用 list asset 命令。
+
+什么是可提取的 GAS，什么是不可提取的 GAS？
+
+每一个 BHP 都有两种状态：unspent 和 spent。每一个未提取的 GAS 也有两种状态，available 和 unavailable。一个 BHP 的生命周期以转入地址起始，转出地址截止，转入时状态变为 unspent，转出时状态变为 spent。当 BHP 处于 unspent 状态时，所产生的 Gas 为 unavailable 状态，即不可提取。当 BHP 处于 spent 状态时，期间所产生的 GAS 变为 available，用户可以提取。
+
+如何将钱包中的所有 unavailable GAS 转为 available GAS 呢，很简单，将钱包中的所有 BHP 转到钱包中的任意一个地址即可。
 
 ### claim gas
 
@@ -177,15 +181,17 @@ available:0
 
 ##### 句法
 
-`claim gas [all]` 
+👉`claim gas [all] [changeAddress]`
 
 ##### 参数
 
 `all`：提取钱包中所有地址的可提取状态的 GAS。如果不指定参数，则默认提取钱包前50个地址中的可提取状态的 GAS。
 
+`changeAddress`：提取到指定地址。
+
 ### create address
 
-在当前钱包中创建一个地址或批量创建地址。创建的地址会自动导出到 address.txt 文件中。
+在当前钱包中创建一个地址或批量创建地址。创建的地址会自动导出到程序目录下address+当前时间的文件中。
 
 ##### 句法
 
@@ -198,10 +204,33 @@ available:0
 ##### 示例
 
 ```
-bhp> create address 3
-The file 'address.txt' already exists, do you want to overwrite it? (yes|no): yes
-[3/3]
-export addresses to address.txt
+bhp> create address
+[1/1]
+export addresses to address20200413120126227.txt
+```
+
+### import key
+
+导入一个私钥或者指定文件中的多个私钥。
+
+##### 句法
+
+ `import key <wif|path>`
+
+##### 参数
+
+`wif|path`：指定要导入的私钥，或者存放私钥的文件路径。
+
+##### 示例
+
+```
+bhp> import key L4zRFphDJ******JT2EcmWPPpPH
+address: AHYxZ6RkU7ZupZoJpESDtzD6WKoumqGNzw
+pubkey: 03b2abff0998e53df0d80ff49c66653b588877c6e21046857384a35db2999b1f34
+```
+
+```
+bhp> import key key.txt
 ```
 
 ### export key
@@ -225,58 +254,52 @@ export addresses to address.txt
 
 ```
 bhp> export key
-password: ********
-L4HoTTfKfzjV8tdWv6vRaMY1cBQbsVc4euGqhPW9Mf8z6993fgMH
-L3raEwVsJHzovTXfgVG1HWxzmH4Zm3vMia8byszhVrvbJ38YnsXv
-KywrMAnBWRXUAb4Aq76ZoCCqDvGNL9nidjVwWwDr3DbMPwg1RPBL
-KwhNLC9rULxJmevqwYbQzJhYNvaCDPyAUAm7EkHrW5kQwLYfxTFG
+password: *
+L3cZs25UoR******io286QKrQ
+L5XogMXbdE******dTr65UWrA
+L4zRFphDJp******EcmWPPpPH
 ```
 
 ```
-bhp> export key AapRvH8FB2jx9S2fmwntAW4QYdXYyyeqQ9
-password: ********
-L4HoTTfKfzjV8tdWv6vRaMY1cBQbsVc4euGqhPW9Mf8z6993fgMH
+bhp> export key AcYUof1TBHUTMa1VKNKcBXSfK3NN8pXb49
+password: *
+L3cZs25Uo******io286QKrQ
 ```
 
 将私钥输出到指定文件中：
 
 ```
 bhp> export key key1.txt
-password: ********
-
+password: *
 ```
 
 ```
-bhp> export key AapRvH8FB2jx9S2fmwntAW4QYdXYyyeqQ9 key2.txt
-password: ********
-
+bhp> export key AcYUof1TBHUTMa1VKNKcBXSfK3NN8pXb49 key2.txt
+password: *
 ```
 
-### import key
+### export wallet
 
-导入一个私钥或者指定文件中的多个私钥。
+导出钱包的相关信息到指定的文件，该命令需要验证钱包密码。
+
+文件内容按`WIF 私钥 公钥 地址`排列，中间用空格间隔。
 
 ##### 句法
 
- `import key <wif|path>`
+👉`export wallet <path>`
 
 ##### 参数
 
-`wif|path`：指定要导入的私钥，或者存放私钥的文件路径。
+- `path`：导出的文件路径，如“D:\mywallet.txt"将导出到指定文件夹，或直接写文件名”mywallet.txt“则导出到程序目录下的该文件。
 
 ##### 示例
 
 ```
-bhp> import key L4HoTTfKfzjV8tdWv6vRaMY1cBQbsVc4euGqhPW9Mf8z6993fgMH
-address: AapRvH8FB2jx9S2fmwntAW4QYdXYyyeqQ9
- pubkey: 03768c9fc17a01854084b836d3f0ae4122902b4b59b6c11e855a3f3bf8ea6b205f
+bhp> export wallet mywallet.txt
+password: *
+[4/4]
+Export wallet to mywallet.txt success
 ```
-
-```
-bhp> import key key1.txt
-```
-
-如果是指定文件的话，文件里的私钥格式请参考 export key key.txt 的输出。
 
 ### import multisigaddress
 
@@ -294,8 +317,8 @@ bhp> import key key1.txt
 ##### 示例
 
 ```
-bhp> import multisigaddress 1 022b386a0ac6fa5abad4bfabc7dff3c016654fa97176811cb64f4831284a7399ca 0288a99d33b6f7f1b19d3be7a7935d2c076fec52d9591336af03e43eec8ca1b16b
-Multisig. Addr.: AYpc268sh4tff7CTj5W4tztt1qheVTUa6P
+bhp> import multisigaddress 1 03286bddc438b209ec979cfdf5cbf801ff072905cc651aba3ef5592349747bea61 03b2abff0998e53df0d80ff49c66653b588877c6e21046857384a35db2999b1f34
+Multisig. Addr.: AP8EDShPxWSvu7NXtLQfQCMWXnrkWFSADg
 ```
 
 ### send
@@ -308,43 +331,36 @@ Multisig. Addr.: AYpc268sh4tff7CTj5W4tztt1qheVTUa6P
 
 ##### 参数
 
-- `id|alias`：资产 ID或资产缩写，如 bhp，gas
+- `id|alias`：资产 ID 或资产缩写，如 bhp，gas
 - `address`：收款地址
 - `amount|all`：转账金额
 - `fee`：设置手续费可以提升交易优先级，默认为0
 
 ##### 示例
 
-将 100 GAS 转到地址 “AMwS5twG1LLJA4USMPFf5UugfUvEfNDz6e”：
+将 100 GAS 转到地址 “AcYUof1TBHUTMa1VKNKcBXSfK3NN8pXb49”：
 
 ```
-bhp> send a1760976db5fcdfab2a9930e8f6ce875b2d18225 AMwS5twG1LLJA4USMPFf5UugfUvEfNDz6e 100
-password: ********
+bhp> send 0x13f76fabfe19f3ec7fd54d63179a156bafc44afc53a7f07a7a15f6724c0aa854 AcYUof1TBHUTMa1VKNKcBXSfK3NN8pXb49 100
+password: *
 TXID: 0x8f831d8de723093316c05749a053a226514bc06338b2bceb50db690610e0b92f
 ```
 
 因为第二个参数除了资产 ID，还可以填写资产缩写，所以以上命令可以写成：
 
 ```
-bhp> send gas AMwS5twG1LLJA4USMPFf5UugfUvEfNDz6e 100
-password: ********
+bhp> send bhp AcYUof1TBHUTMa1VKNKcBXSfK3NN8pXb49 100
+password: *
 TXID: 0xae0675797c2d738dcadb21cec3f1809ff453ac291046a05ac679cbd95b79c856
 ```
 
 要查看资产 ID ，可输入 `list asset` 命令查看钱包中的所有资产。
 
-当从签名数量为 1 以上的多方签名合约地址中转出资产时，需要多方进行签名，此时会返回一段待签名的 json 字符串，如下所示： 
-
-```
-bhp> send gas ARfyrX28D2H2wP6KR6xxaUbvqvkv5SbMNe 2
-password: ********
-SignatureContext:
-{"type":"bhp.Network.P2P.Payloads.Transaction","hex":"0071c0992d42e2a62c8b763b5de5b0e1b2e239a7bbd2952a0c00e1f50500000000ac0c240000000000cb152300000142e2a62c8b763b5de5b0e1b2e239a7bbd2952a0c01550400c2eb0b146c93f190909dea8dfe3caeb2ee90530b4ef21e861442e2a62c8b763b5de5b0e1b2e239a7bbd2952a0c53c1087472616e73666572142582d1b275e86c8f0e93a9b2facd5fdb760976a168627d5b52f1","items":{"0x0c2a95d2bba739e2b2e1b0e55d3b768b2ca6e242":{"script":"5221032528d085e55de82b801374ea91cc51b5e6e990ba2eddb2f461c4d95da54aff002102685dd451efbf38cf859a80f250815f503303dd7b9f6546786164de219ede87735268c7c34cba","parameters":[{"type":"Signature"},{"type":"Signature"}],"signatures":{"032528d085e55de82b801374ea91cc51b5e6e990ba2eddb2f461c4d95da54aff00":"d9ac57bac4260c60707e0b641585c70789e1a2eb5438c95de972af9aff99f5f4485b81cd2382218583b7f4950da54dbd8d1468f72b91809e14bb1c8139cca637"}}}}
-```
+当从签名数量为 1 以上的多方签名合约地址中转出资产时，需要多方进行签名，此时会返回一段待签名的 json 字符串。
 
 ### sign
 
-从签名数量为 1 以上的多方签名合约中提取资产时，需要多方进行签名。 签名完整后才能广播出去。广播交易的方法请参照 relay 方法。
+从签名数量为 1 以上的多方签名合约中提取资产时，需要多方进行签名。 签名完整后才能广播出去。广播交易的方法请参照 [relay](#relay) 方法。
 
 ##### 句法
 
@@ -353,14 +369,6 @@ SignatureContext:
 ##### 参数
 
 `jsonObjectToSign`：记录多方签名交易的 json 字符串。
-
-##### 示例
-
-```
-bhp> sign {"type":"bhp.Network.P2P.Payloads.Transaction","hex":"0071c0992d42e2a62c8b763b5de5b0e1b2e239a7bbd2952a0c00e1f50500000000ac0c240000000000cb152300000142e2a62c8b763b5de5b0e1b2e239a7bbd2952a0c01550400c2eb0b146c93f190909dea8dfe3caeb2ee90530b4ef21e861442e2a62c8b763b5de5b0e1b2e239a7bbd2952a0c53c1087472616e73666572142582d1b275e86c8f0e93a9b2facd5fdb760976a168627d5b52f1","items":{"0x0c2a95d2bba739e2b2e1b0e55d3b768b2ca6e242":{"script":"5221032528d085e55de82b801374ea91cc51b5e6e990ba2eddb2f461c4d95da54aff002102685dd451efbf38cf859a80f250815f503303dd7b9f6546786164de219ede87735268c7c34cba","parameters":[{"type":"Signature"},{"type":"Signature"}],"signatures":{"032528d085e55de82b801374ea91cc51b5e6e990ba2eddb2f461c4d95da54aff00":"d9ac57bac4260c60707e0b641585c70789e1a2eb5438c95de972af9aff99f5f4485b81cd2382218583b7f4950da54dbd8d1468f72b91809e14bb1c8139cca637"}}}}
-Signed Output:
-{"type":"bhp.Network.P2P.Payloads.Transaction","hex":"0071c0992d42e2a62c8b763b5de5b0e1b2e239a7bbd2952a0c00e1f50500000000ac0c240000000000cb152300000142e2a62c8b763b5de5b0e1b2e239a7bbd2952a0c01550400c2eb0b146c93f190909dea8dfe3caeb2ee90530b4ef21e861442e2a62c8b763b5de5b0e1b2e239a7bbd2952a0c53c1087472616e73666572142582d1b275e86c8f0e93a9b2facd5fdb760976a168627d5b52f1","items":{"0x0c2a95d2bba739e2b2e1b0e55d3b768b2ca6e242":{"script":"5221032528d085e55de82b801374ea91cc51b5e6e990ba2eddb2f461c4d95da54aff002102685dd451efbf38cf859a80f250815f503303dd7b9f6546786164de219ede87735268c7c34cba","parameters":[{"type":"Signature","value":"794f87a810bd30b15f90ddc1898e2e592c1a3fae4b14e34d8a411305e7913d44ab56e388125ef597be46a8958b2ed8c5e298076c2d69ab3337c944f5356c462b"},{"type":"Signature","value":"d9ac57bac4260c60707e0b641585c70789e1a2eb5438c95de972af9aff99f5f4485b81cd2382218583b7f4950da54dbd8d1468f72b91809e14bb1c8139cca637"}]}}}
-```
 
 ### relay
 
@@ -374,17 +382,9 @@ Signed Output:
 
 `jsonObjectToSign`：记录签名交易的 json 字符串。
 
-##### 示例
+### export block[s]
 
-```
-bhp> relay {"type":"bhp.Network.P2P.Payloads.Transaction","hex":"0071c0992d42e2a62c8b763b5de5b0e1b2e239a7bbd2952a0c00e1f50500000000ac0c240000000000cb152300000142e2a62c8b763b5de5b0e1b2e239a7bbd2952a0c01550400c2eb0b146c93f190909dea8dfe3caeb2ee90530b4ef21e861442e2a62c8b763b5de5b0e1b2e239a7bbd2952a0c53c1087472616e73666572142582d1b275e86c8f0e93a9b2facd5fdb760976a168627d5b52f1","items":{"0x0c2a95d2bba739e2b2e1b0e55d3b768b2ca6e242":{"script":"5221032528d085e55de82b801374ea91cc51b5e6e990ba2eddb2f461c4d95da54aff002102685dd451efbf38cf859a80f250815f503303dd7b9f6546786164de219ede87735268c7c34cba","parameters":[{"type":"Signature","value":"794f87a810bd30b15f90ddc1898e2e592c1a3fae4b14e34d8a411305e7913d44ab56e388125ef597be46a8958b2ed8c5e298076c2d69ab3337c944f5356c462b"},{"type":"Signature","value":"d9ac57bac4260c60707e0b641585c70789e1a2eb5438c95de972af9aff99f5f4485b81cd2382218583b7f4950da54dbd8d1468f72b91809e14bb1c8139cca637"}]}}}
-Data relay success, the hash is shown as follows:
-0xdcf144d9ed2d64482fb5caafa719cf6706e9afd607ab043e8bfcb9018795e4d1
-```
-
-###export block[s]
-
-导出全部区块数据，或者从指定区块高度导出指定数量的区块数据，导出的结果可以用作离线同步。要使用此命令，需先安装 ImportBlocks 插件。
+导出全部区块数据，或者从指定区块高度导出指定数量的区块数据，导出的结果可以用作离线同步。要使用此命令，需先安装 [ImportBlocks](https://github.com/BhpAlpha/bhp-plugins/releases) 插件。
 
 ##### 句法
 
@@ -397,8 +397,4 @@ Data relay success, the hash is shown as follows:
 `[path=chain.acc]`：导出全部区块数据
 
 `<start> [count]`：指定要导出数据的起始区块高度和区块数量
-
-### start consensus
-
-启动共识。启动共识的前提是该钱包有共识的权限，在 bhp 主网上可以通过投票选举获得共识的权限，如果自己部署的私有链，可以在 `protocol.json` 中设置共识节点的公钥。
 

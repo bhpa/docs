@@ -1,6 +1,6 @@
 # getrawtransactionorder方法
 
-查询订单交易信息
+查询订单交易信息。
 
 ## 参数说明
 

@@ -1,8 +1,10 @@
 # getutxos方法
 
-查询指定地址的未花费UTXO。
+查询指定地址的未花费 UTXO。
 
->  [!Note] 执行此命令前需要在 Bhp-CLI 节点中打开钱包。
+>  [!Note] 
+>
+>  执行此命令前需要在 BHP-CLI 节点中打开钱包。
 
 ## 参数说明
 
@@ -44,5 +46,5 @@
 
 响应说明：
 
-- txid：该utxo所在的交易ID
-- vout：该utxo在该交易中的索引
+- txid：该 UTXO 所在的交易ID
+- vout：该 UTXO 在该交易中的索引

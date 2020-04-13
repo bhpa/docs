@@ -1,10 +1,10 @@
 # getaccountstate方法
 
-根据账户地址，查询账户资产信息
+根据账户地址，查询账户全局资产（如 BHP、GAS 等）资产信息。
 
 ## 参数说明
 
-address：账户地址，以A开头的34位长度的字符串
+address：账户地址，以 A 开头的 34 位长度的字符串，如 AJQ6mhziuS5nYMTBVcu3egXkYtkYsKgcwZ。
 
 ## 调用示例
 

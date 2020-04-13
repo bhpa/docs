@@ -1,6 +1,6 @@
 # submitblock方法
 
-在 BHP 网络广播原始区块
+在 BHP 网络广播原始区块。
 
 ## 参数说明
 
@@ -22,13 +22,16 @@ Hex: 序列化区块的十六进制字符串。
 响应正文：
 
 ```
-响应成功:
 {
   "jsonrpc": "2.0",
   "id": 1,
   "result": true
 }
-响应失败:
+```
+
+失败的响应正文:
+
+```
 {
     "jsonrpc": "2.0",
     "id": 1,
@@ -43,9 +46,11 @@ Hex: 序列化区块的十六进制字符串。
 
 当结果为 false 时，区块广播失败并引发异常。可能返回以下错误代码：
 
-- -501：区块或交易已经存在，不能重复发送。
-- -502：内存池已满，不能发送更多交易。
-- -503：无法验证区块。
-- -504：区块或交易验证失败。
-- -505：某个策略筛选器失败。
-- -500：未知错误。
+| 错误码 | 消息                                                         |
+| ------ | ------------------------------------------------------------ |
+| -501   | Block or transaction already exists and cannot be sent repeatedly. |
+| -502   | The memory pool is full and no more transactions can be sent. |
+| -503   | The block cannot be validated.                               |
+| -504   | Block or transaction validation failed.                      |
+| -505   | One of the Policy filters failed.                            |
+| -500   | Unknown error.                                               |

@@ -1,16 +1,23 @@
 # sendtoaddress方法
 
-向指定地址转账
+向指定地址转账。
 
->  [!Note] 执行此命令前需要在 Bhp-CLI 节点中打开钱包。
+>  [!Note] 
+>
+>  执行此命令前需要在 BHP-CLI 节点中打开钱包。
 
 ## 参数说明
 
-- asset_id：资产 ID（资产标识符），即该资产在注册时的 RegistTransaction 的交易 ID。其余资产 ID 可以通过 CLI 命令 中的 list asset 命令查询，也可以在区块链浏览器中查询。
+- asset_id：资产 ID（资产标识符），即该资产在注册时的 RegistTransaction 的交易 ID。其余资产 ID 可以通过 CLI 命令 中的 `list asset` 命令查询，也可以在区块链浏览器中查询。
+
 - address：收款地址
+
 - value：转账金额。
+
 - fee：手续费，可选参数，默认为 0。
+
 - change_address：找零地址，可选参数，默认为钱包中第一个标准地址
+
 - fee_address：bhp手续费地址，可选参数。（转账资产为BHP时，此参数无效）
 
 ## 调用示例

@@ -2,12 +2,16 @@
 
 将钱包内的资产转账到指定地址。
 
->  [!Note] 执行此命令前需要在 Bhp-CLI 节点中打开钱包。
+>  [!Note] 
+>
+>  执行此命令前需要在 BHP-CLI 节点中打开钱包。
 
 ## 参数说明
 
 - address：要转账的地址，该地址需为标准地址。
-- asset：资产 ID（资产标识符），即该资产在注册时的 RegistTransaction 的交易 ID。其余资产 ID 可以通过CLI命令中的 llist asset 命令查询，也可以在区块链浏览器中查询。默认为BHP资产。
+
+- asset：资产 ID（资产标识符），即该资产在注册时的 RegistTransaction 的交易 ID。其余资产 ID 可以通过CLI命令中的 `llist asset` 命令查询，也可以在区块链浏览器中查询。默认为BHP资产。
+
 - fee_address：bhp手续费地址，可选参数。（转账资产包含BHP时，此参数无效）
 
 ## 调用示例

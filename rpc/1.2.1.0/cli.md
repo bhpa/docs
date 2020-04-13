@@ -1,4 +1,4 @@
-# CLI命令参考
+# CLI 命令参考
 
 > 修改
 >
@@ -10,7 +10,7 @@
 >
 > - close wallet
 
-打开命令行，定位到 BHP-CLI 所在目录，输入下面代码即可启动 BHP 的命令行钱包。
+打开命令行，定位到 BHP-CLI 所在目录，输入以下命令即可启动 BHP 的命令行钱包。
 
 `dotnet bhp-cli.dll`
 

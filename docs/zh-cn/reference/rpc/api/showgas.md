@@ -1,8 +1,10 @@
 # showgas方法
 
-返回本钱包的bhpgas。
+返回本钱包的BhpGas。
 
->  [!Note] 执行此命令前需要在 Bhp-CLI 节点中打开钱包。
+>  [!Note]
+>
+>   执行此命令前需要在 BHP-CLI 节点中打开钱包。
 
 ## 参数说明
 
@@ -36,5 +38,5 @@
 
 响应说明：
 
-- unavailable：不可用的bhpgas
-- available：可用的bhpgas
+- unavailable：不可用的BhpGas
+- available：可用的BhpGas

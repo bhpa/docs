@@ -1,6 +1,6 @@
 # sendrawtransaction方法
 
-广播交易
+广播交易。
 
 ## 参数说明
 
@@ -29,8 +29,31 @@ hex：在程序中构造的已签名的交易序列化后的 16 进制字符串
 }
 ```
 
+失败的响应正文：
+
+```
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+        "code": -501,
+        "message": "Block or transaction already exists and cannot be sent repeatedly."
+    }
+}
+```
+
 响应说明：
 
 - 当 result 为 true 时表明当前交易广播成功
 - 当 result 为 false 时表示当前交易广播失败，原因可能有双重花费、签名不完整等
-- 本示例中广播了一个已经确认的交易，因为双重花费所以广播失败
+- 本示例中广播了一个已经确认的交易，因为双重花费所以广播失败。可能会遇到以下错误码：
+
+| 错误码 | 消息                                                         |
+| ------ | ------------------------------------------------------------ |
+| -501   | Block or transaction already exists and cannot be sent repeatedly. |
+| -502   | The memory pool is full and no more transactions can be sent. |
+| -503   | The block cannot be validated.                               |
+| -504   | Block or transaction validation failed.                      |
+| -505   | One of the Policy filters failed.                            |
+| -500   | Unknown error.                                               |
+

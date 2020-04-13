@@ -1,6 +1,6 @@
 # getutxoofaddress方法
 
-获取指定地址的未花费UTXO
+获取指定地址的未花费 UTXO。
 
 ## 参数说明
 
