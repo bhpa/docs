@@ -89,7 +89,7 @@ JSON-RPC 服务器启动后，会监听 TCP 端口，默认端口如下。
 
 | 方法                                                    | 参数                                                         | 说明                                                 | 备注                        |
 | ------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------- | --------------------------- |
-| [claimgas](rpc/1.2.0.11/api/claimgas.md)                |                                                              | 提取bhpgas                                           | 需要打开钱包                |
+| [claimgas](api/claimgas.md)                             |                                                              | 提取bhpgas                                           | 需要打开钱包                |
 | [dumpprivkey](api/dumpprivkey.md)                       | \<address>                                                   | 导出指定地址的私钥                                   | 需要打开钱包                |
 | [exportaddresswif](api/exportaddresswif.md)             | \<address>                                                   | 获取地址的相关信息                                   | 需要打开钱包                |
 | [get_tx_list](api/get_tx_list.md)                       | \<address>\<position>\<offset>                               | 获取指定地址的交易列表                               |                             |
