@@ -1,5 +1,9 @@
 # API 参考
 
+> 新增
+>
+> - getbrc20balances、getbrc20transfers
+>
 > 修改
 >
 > - invoke、invokefunction、invokescript
@@ -104,6 +108,8 @@ JSON-RPC 服务器启动后，会监听 TCP 端口，默认端口如下。
 | [getblockhash](api/getblockhash.md)                     | \<index>                                                     | 根据指定的索引，返回对应区块的散列值                 |                             |
 | [getblockheader](api/getblockheader.md)                 | \<hash> [verbose=0]                                          | 根据指定的散列值，返回对应的区块头信息。             |                             |
 | [getblocksysfee](api/getblocksysfee.md)                 | \<index>                                                     | 根据指定的索引，返回截止到该区块前的系统手续费       |                             |
+| [getbrc20balances](api/getbrc20balances.md)             | \<address>                                                   | 返回指定地址内的所有 BRC-20 资产余额                 |                             |
+| [getbrc20transfers](api/getbrc20transfers.md)           | \<address>[timestamp]                                        | 返回指定地址内的所有 BRC-20 交易记录                 |                             |
 | [getconnectioncount](api/getconnectioncount.md)         |                                                              | 获取节点当前的连接数                                 |                             |
 | [getcontractopcode](api/getcontractopcode.md)           | \<hex>                                                       | 获取合约脚本的指令解析                               |                             |
 | [getcontractstate](api/getcontractstate.md)             | <script_hash>                                                | 根据合约脚本散列，查询合约信息                       |                             |
