@@ -190,6 +190,10 @@
         href: /docs/zh-cn/reference/rpc/api/getblockheader.md
       - name: getblocksysfee
         href: /docs/zh-cn/reference/rpc/api/getblocksysfee.md
+      - name: getbrc20balances
+        href: /docs/zh-cn/reference/rpc/api/getbrc20balances.md
+      - name: getbrc20transfers
+        href: /docs/zh-cn/reference/rpc/api/getbrc20transfers.md
       - name: getconnectioncount
         href: /docs/zh-cn/reference/rpc/api/getconnectioncount.md
       - name: getcontractopcode
