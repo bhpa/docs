@@ -105,7 +105,7 @@ const toAddressLittle = NeBhpon.u.reverseHex(Bhp.wallet.getScriptHashFromAddress
 sb.emitAppCall(cgasContractHash, "balanceOf", [fromAddressLittle, toAddressLittle, 250000000]);
 var script = sb.str;
 
-const rpcClient = new Bhp.rpc.RPCClient("http://exp.bhpa.io:20557");
+const rpcClient = new Bhp.rpc.RPCClient("https://rpc.bhpa.io");
 rpcClient.invokeScript(script)
     .then(response => {
         console.log(response.stack);
