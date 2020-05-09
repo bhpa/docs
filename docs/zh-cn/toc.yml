@@ -158,7 +158,7 @@
     items:
     - name: API 参考
       href: /docs/zh-cn/reference/rpc/api.md
-    - name: v1.2.1.0
+    - name: v1.2.1.1
       items:
       - name: claimgas
         href: /docs/zh-cn/reference/rpc/api/claimgas.md
@@ -166,8 +166,6 @@
         href: /docs/zh-cn/reference/rpc/api/dumpprivkey.md
       - name: exportaddresswif
         href: /docs/zh-cn/reference/rpc/api/exportaddresswif.md
-      - name: get_tx_list
-        href: /docs/zh-cn/reference/rpc/api/get_tx_list.md
       - name: getaccountstate
         href: /docs/zh-cn/reference/rpc/api/getaccountstate.md
       - name: getapplicationlog
@@ -194,14 +192,14 @@
         href: /docs/zh-cn/reference/rpc/api/getbrc20balances.md
       - name: getbrc20transfers
         href: /docs/zh-cn/reference/rpc/api/getbrc20transfers.md
+      - name: getclaimable
+        href: /docs/zh-cn/reference/rpc/api/getclaimable.md
       - name: getconnectioncount
         href: /docs/zh-cn/reference/rpc/api/getconnectioncount.md
       - name: getcontractopcode
         href: /docs/zh-cn/reference/rpc/api/getcontractopcode.md
       - name: getcontractstate
         href: /docs/zh-cn/reference/rpc/api/getcontractstate.md
-      - name: getdeposits
-        href: /docs/zh-cn/reference/rpc/api/getdeposits.md
       - name: getnewaddress
         href: /docs/zh-cn/reference/rpc/api/getnewaddress.md
       - name: getpeers
@@ -214,16 +212,16 @@
         href: /docs/zh-cn/reference/rpc/api/getrawtransactionorder.md
       - name: getstorage
         href: /docs/zh-cn/reference/rpc/api/getstorage.md
-      - name: gettransaction
-        href: /docs/zh-cn/reference/rpc/api/gettransaction.md
       - name: gettransactiondata
         href: /docs/zh-cn/reference/rpc/api/gettransactiondata.md
       - name: gettransactionheight
         href: /docs/zh-cn/reference/rpc/api/gettransactionheight.md
       - name: gettxout
         href: /docs/zh-cn/reference/rpc/api/gettxout.md
-      - name: getutxoofaddress
-        href: /docs/zh-cn/reference/rpc/api/getutxoofaddress.md
+      - name: getunclaimed
+        href: /docs/zh-cn/reference/rpc/api/getunclaimed.md
+      - name: getunspents
+        href: /docs/zh-cn/reference/rpc/api/getunspents.md
       - name: getutxos
         href: /docs/zh-cn/reference/rpc/api/getutxos.md
       - name: getvalidators
@@ -240,10 +238,14 @@
         href: /docs/zh-cn/reference/rpc/api/invokescript.md
       - name: listaddress
         href: /docs/zh-cn/reference/rpc/api/listaddress.md
+      - name: listplugins
+        href: /docs/zh-cn/reference/rpc/api/listplugins.md
       - name: listsinceblock
         href: /docs/zh-cn/reference/rpc/api/listsinceblock.md
       - name: sendfrom
         href: /docs/zh-cn/reference/rpc/api/sendfrom.md
+      - name: sendinvokescript
+        href: /docs/zh-cn/reference/rpc/api/sendinvokescript.md
       - name: sendissuetransaction
         href: /docs/zh-cn/reference/rpc/api/sendissuetransaction.md
       - name: sendmany
