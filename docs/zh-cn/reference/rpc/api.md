@@ -41,7 +41,8 @@ dotnet bhp-cli.dll --rpc
       "BindAddress": "127.0.0.1",
       "Port": 20557,
       "SslCert": "",
-      "SslCertPassword": ""
+      "SslCertPassword": "",
+      "MaxGasInvoke": 0
     },
     "UnlockWallet": {
       "Path": "",
@@ -53,7 +54,7 @@ dotnet bhp-cli.dll --rpc
     },
     "PluginURL": "",
     "DataRPC": {
-      "Host": "http://exp.bhpa.io:7070"
+      "Host": ""
     },
     "ExportWallet": {
       "Path": "",
