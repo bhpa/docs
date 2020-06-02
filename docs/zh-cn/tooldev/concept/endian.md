@@ -91,29 +91,7 @@ var outputs = new List<TransactionOutput>{ new TransactionOutput()
 
 #### 通过SDK构造调用合约的交易
 
-
-如果使用 BHP SDK 构造 InvocationTransaction，调用合约的执行脚本需要通过 ScriptBuilder 构造，这时应该使用**小端序**的地址 ScriptHash 作为参数。这里我们使用 BHP SDK JavaScript [bhp-js](https://github.com/BhpAlpha/bhp-js)版本为例：
-
-```
-const Bhp = require("./bhp-js");
-const privateKey = "1f9f747e54f92484a2c3b59fb274c87021461238c78f42515fa712012a8e3b6a";
-const account = new Bhp.wallet.Account(privateKey);
-const cgasContractHash = "6f7c97d4836b6cf9c114940473b78729c7d1af51"; //CGAS ScriptHash
-
-const fromAddressLittle = Bhp.u.reverseHex(Bhp.wallet.getScriptHashFromAddress("ARwMufsDMXFDvtCH9cpjxUHD1pBsZvRkJy")); // address -> ScriptHash (小端序)
-const toAddressLittle = NeBhpon.u.reverseHex(Bhp.wallet.getScriptHashFromAddress("ARwMufsDMXFDvtCH9cpjxUHD1pBsZvRkJy")); // address -> ScriptHash (小端序)
-sb.emitAppCall(cgasContractHash, "balanceOf", [fromAddressLittle, toAddressLittle, 250000000]);
-var script = sb.str;
-
-const rpcClient = new Bhp.rpc.RPCClient("https://rpc.bhpa.io");
-rpcClient.invokeScript(script)
-    .then(response => {
-        console.log(response.stack);
-    })
-    .catch(err => {
-        console.log(err);
-    });
-```
+如果使用 BHP SDK 构造 InvocationTransaction，调用合约的执行脚本需要通过 ScriptBuilder 构造，这时应该使用**小端序**的地址 ScriptHash 作为参数。
 
 合约执行完成后，可以通过 [getapplicationlog 方法](../../reference/rpc/api/getapplicationlog.md) 查看执行日志，执行日志在输出地址的时候，是以 ByteArray 为数据类型，输出地址相对应的小端序 ScriptHash。
 
