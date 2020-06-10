@@ -78,6 +78,8 @@ BHP-CLI 默认接入主网，如果要连接测试网，你需要用 BHP-CLI 目
 | [ImportBlocks](https://github.com/BhpAlpha/bhp-plugins/releases) | 同步离线包                                                   |                                                              | 必选 |
 | [SimplePolicy](https://github.com/BhpAlpha/bhp-plugins/releases) | 过滤非法交易                                                 |                                                              | 必选 |
 | [ApplicationLogs](https://github.com/BhpAlpha/bhp-plugins/releases) | 在 RPC 模式下自动同步智能合约日志（ApplicationLogs），目前日志已经改为以 LevelDB 格式存储 | [getapplicationlog](../../reference/rpc/api/getapplicationlog.md) | 必选 |
+| [RpcBrc20Tracker](https://github.com/BhpAlpha/bhp-plugins/releases) | 提供 BRC-20 余额及交易历史的 RPC 查询功能。                  | [getbrc20balances](../../reference/rpc/api/getbrc20balances.md) [getbrc20transfers](../../reference/rpc/api/getbrc20transfers.md) | 推荐 |
+| [RpcSystemAssetTracker](https://github.com/BhpAlpha/bhp-plugins/releases) | 查询 UTXO 资产相关信息。                                     | [getunclaimed](../../reference/rpc/api/getbrc20transfers.md) [getclaimable](../../reference/rpc/api/getbrc20transfers.md) [getunspents](../../reference/rpc/api/getbrc20transfers.md) | 推荐 |
 | [StatesDumper](https://github.com/BhpAlpha/bhp-plugins/releases) | 导出 Bhp-CLI 状态数据                                        |                                                              | 可选 |
 | [RpcSecurity](https://github.com/BhpAlpha/bhp-plugins/releases) | 对 HTTP Request 进行 base64 加密，提升 RPC 请求的安全性。需要在该插件的 config.json 文件中设置 username 和 password |                                                              | 可选 |
 
