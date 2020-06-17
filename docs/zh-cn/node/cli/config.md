@@ -18,7 +18,7 @@ BHP-CLI 在执行过程中会访问两个配置文件 `config.json` 和 `protoco
 下面是一个标准设置的例子：
 
 ```json
-  {
+{
   "ApplicationConfiguration": {
     "Paths": {
       "Chain": "Chain_{0}",
@@ -26,13 +26,17 @@ BHP-CLI 在执行过程中会访问两个配置文件 `config.json` 和 `protoco
     },
     "P2P": {
       "Port": 20555,
-      "WsPort": 20556
+      "WsPort": 20556,
+      "MinDesiredConnections": 10,
+      "MaxConnections": 40,
+      "MaxConnectionsPerAddress": 3
     },
     "RPC": {
       "BindAddress": "127.0.0.1",
       "Port": 20557,
       "SslCert": "",
-      "SslCertPassword": ""
+      "SslCertPassword": "",
+      "MaxGasInvoke": 0
     },
     "UnlockWallet": {
       "Path": "",
@@ -42,9 +46,9 @@ BHP-CLI 在执行过程中会访问两个配置文件 `config.json` 和 `protoco
       "AutoLock": false,
       "IsBhpFee": false
     },
-    "PluginURL": "",
+    "PluginURL": "https://github.com/BhpAlpha/bhp-plugins/releases/download/v{0}/{1}",
     "DataRPC": {
-      "Host": "http://exp.bhpa.io:7070"
+      "Host": ""
     },
     "ExportWallet": {
       "Path": "",
@@ -53,6 +57,7 @@ BHP-CLI 在执行过程中会访问两个配置文件 `config.json` 和 `protoco
     }
   }
 }
+
 ```
 
 > [!Note]

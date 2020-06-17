@@ -242,6 +242,8 @@
         href: /docs/zh-cn/reference/rpc/api/listplugins.md
       - name: listsinceblock
         href: /docs/zh-cn/reference/rpc/api/listsinceblock.md
+      - name: scripttoaddress
+        href: /docs/zh-cn/reference/rpc/api/scripttoaddress.md
       - name: sendfrom
         href: /docs/zh-cn/reference/rpc/api/sendfrom.md
       - name: sendinvokescript

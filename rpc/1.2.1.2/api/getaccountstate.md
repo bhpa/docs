@@ -1,0 +1,45 @@
+# getaccountstate方法
+
+根据账户地址，查询账户全局资产（如 BHP、GAS 等）资产信息。
+
+## 参数说明
+
+address：账户地址，以 A 开头的 34 位长度的字符串，如 AJQ6mhziuS5nYMTBVcu3egXkYtkYsKgcwZ。
+
+## 调用示例
+
+请求正文：
+
+```
+{
+  "jsonrpc": "2.0",
+  "method": "getaccountstate",
+  "params": ["AJQ6mhziuS5nYMTBVcu3egXkYtkYsKgcwZ"],
+  "id": 1
+}
+```
+
+响应正文：
+
+```
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "version": 0,
+        "script_hash": "0xce3005fe8f20bf857752242d74604abd8a2eca1c",
+        "frozen": false,
+        "votes": [],
+        "balances": []
+    }
+}
+```
+
+响应说明：
+
+- script_hash：合约脚本散列，在 BHP 中所有账户都是合约账户。
+- frozen：该账户是否冻结。
+- votes：查询该地址用于投票的 BHP
+- balance：该地址的资产余额。
+- asset：资产 ID
+- value：资产金额
